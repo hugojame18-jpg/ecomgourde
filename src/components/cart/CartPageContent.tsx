@@ -192,7 +192,7 @@ export function CartPageContent() {
             <ul className="mt-5 flex flex-col gap-2 text-[13px] text-ink-600">
               <li>🔒 Paiement sécurisé — CB, Apple Pay, PayPal</li>
               <li>↩️ 30 jours pour changer d&apos;avis</li>
-              <li>📦 Livraison en 5 à 10 jours</li>
+              <li>📦 Livraison en 7 à 14 jours</li>
             </ul>
           </div>
         </aside>

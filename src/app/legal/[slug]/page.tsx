@@ -136,7 +136,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
       {
         h: "5. Livraison",
         p: [
-          "Les produits sont expédiés en France métropolitaine. Le délai de livraison est de 5 à 10 jours à compter de la validation de la commande. Un numéro de suivi est communiqué dès l'expédition.",
+          "Les produits sont expédiés en France métropolitaine. Le délai de livraison est de 7 à 14 jours à compter de la validation de la commande. Un numéro de suivi est communiqué dès l'expédition.",
           "La livraison est offerte sur toutes les commandes contenant une gourde.",
           "En cas de dépassement de la date de livraison indiquée, tu peux nous demander de livrer dans un délai supplémentaire raisonnable ; à défaut, tu peux annuler la commande et être remboursé sous 14 jours (articles L216-2 et L216-6 du Code de la consommation).",
         ],

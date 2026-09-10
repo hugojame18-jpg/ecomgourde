@@ -27,7 +27,7 @@ const channels = [
     icon: "📦",
     title: "Suivi de commande",
     text: "Le lien est dans ton e-mail de confirmation",
-    detail: "Livraison en 5 à 10 jours, suivi fourni.",
+    detail: "Livraison en 7 à 14 jours, suivi fourni.",
   },
 ];
 

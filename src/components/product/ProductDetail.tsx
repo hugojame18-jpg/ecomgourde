@@ -232,7 +232,7 @@ export function ProductDetail({ product }: { product: Product }) {
                   <span className="font-semibold">{site.freeShippingThreshold} €</span>
                 </span>
               )}
-              <span className="text-ink-400">· 5 à 10 jours</span>
+              <span className="text-ink-400">· 7 à 14 jours</span>
               {saving > 0 ? (
                 <span
                   className="rounded-full px-2.5 py-1 text-[11.5px] font-bold text-white"

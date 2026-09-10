@@ -49,7 +49,7 @@ export const site = {
   promoBar: [
     "🚚 Livraison offerte sur toutes les gourdes",
     "↩️ 30 jours pour changer d'avis",
-    "📦 Livraison en 5 à 10 jours",
+    "📦 Livraison en 7 à 14 jours",
   ],
   /** au-dessus, le port est offert — toute gourde dépasse ce montant */
   freeShippingThreshold: 24.9,

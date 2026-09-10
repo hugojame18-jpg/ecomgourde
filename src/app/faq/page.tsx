@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const shipping = [
   {
     q: "Quels sont les délais de livraison ?",
-    a: "Compte 5 à 10 jours entre ta commande et sa réception, suivi fourni dès l'expédition.",
+    a: "Compte 7 à 14 jours entre ta commande et sa réception, suivi fourni dès l'expédition.",
   },
   {
     q: "Combien coûte la livraison ?",

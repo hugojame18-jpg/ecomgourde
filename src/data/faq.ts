@@ -25,6 +25,6 @@ export const faq = [
   },
   {
     q: "Quels sont les délais de livraison ?",
-    a: "Compte 5 à 10 jours entre ta commande et sa réception. Tu reçois un numéro de suivi dès que le colis part. Livraison offerte sur toutes les gourdes.",
+    a: "Compte 7 à 14 jours entre ta commande et sa réception. Tu reçois un numéro de suivi dès que le colis part. Livraison offerte sur toutes les gourdes.",
   },
 ];
