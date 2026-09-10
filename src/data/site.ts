@@ -12,8 +12,14 @@ export const site = {
    * obligatoires en vente à distance.
    */
   legal: {
-    /** raison sociale exacte, telle qu'immatriculée */
-    company: "Lucas Vandendriessche",
+    /**
+     * Raison sociale exacte, telle qu'immatriculée. Pour une entreprise
+     * individuelle, c'est le nom et le prénom de l'entrepreneur : la loi
+     * (art. R123-237 du Code de commerce et art. 6 III de la LCEN) exige
+     * qu'ils figurent dans les mentions légales. Un nom commercial seul
+     * ne suffit pas.
+     */
+    company: "",
     /** ex. « Entreprise individuelle (micro-entreprise) » */
     form: "Entrepreneur individuel (EI)",
     /** 9 chiffres */
@@ -21,7 +27,7 @@ export const site = {
     /** adresse du siège, telle que déclarée */
     address: "Avenue Las Bordes, 64420 Soumoulou, France",
     /** personne responsable de la publication */
-    publisher: "Lucas Vandendriessche",
+    publisher: "",
     /** adresse e-mail du service client, publiée sur le site */
     email: "kirenagency@gmail.com",
     /** facultatif */

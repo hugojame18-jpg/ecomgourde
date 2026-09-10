@@ -18,11 +18,13 @@ import { site } from "@/data/site";
  */
 
 const L = site.legal;
-const manque = (v: string) => (v.trim() ? v : "[à compléter]");
+
+/** Nom sous lequel le site s'annonce, à défaut de raison sociale renseignée. */
+const NOM_EDITEUR = L.company.trim() || site.legalName;
 
 /** Mentions sans lesquelles le site ne doit pas encaisser de commande. */
 const CHAMPS_REQUIS = [
-  ["company", "la raison sociale"],
+  ["company", "le nom de l'entrepreneur (obligatoire pour une EI)"],
   ["siren", "le SIREN"],
   ["address", "l'adresse du siège"],
   ["email", "l'e-mail de contact"],
@@ -47,6 +49,19 @@ const mediation = L.mediator.trim()
   ? `En cas de litige non résolu, tu peux recourir gratuitement au médiateur de la consommation dont nous relevons : ${L.mediator}.`
   : "En cas de litige non résolu, tu peux recourir gratuitement à un médiateur de la consommation. Écris-nous d'abord : nous te communiquons les coordonnées du médiateur dont nous relevons sous 48 heures ouvrées.";
 
+/**
+ * Bloc « Éditeur » : chaque ligne dont l'information manque est retirée
+ * plutôt qu'affichée à trou. Un champ vide reste signalé par le rappel
+ * ci-dessus, visible en local uniquement.
+ */
+const editeur = [
+  [NOM_EDITEUR, L.form].filter(Boolean).join(" — "),
+  L.address && `Siège social : ${L.address}`,
+  [L.siren && `SIREN : ${L.siren}`, L.vat].filter(Boolean).join(" — "),
+  L.email && `Contact : ${L.email}${L.phone ? ` — ${L.phone}` : ""}`,
+  L.publisher && `Responsable de la publication : ${L.publisher}`,
+].filter((ligne): ligne is string => Boolean(ligne));
+
 /** Hébergeur du site : GitHub Pages. À changer si tu déménages le site. */
 const HEBERGEUR =
   "GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — https://github.com";
@@ -60,13 +75,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
     blocks: [
       {
         h: "Éditeur du site",
-        p: [
-          `${manque(L.company)} — ${manque(L.form)}`,
-          `Siège social : ${manque(L.address)}`,
-          `SIREN : ${manque(L.siren)} — ${L.vat}`,
-          `Contact : ${manque(L.email)}${L.phone ? ` — ${L.phone}` : ""}`,
-          `Responsable de la publication : ${manque(L.publisher)}`,
-        ],
+        p: editeur,
       },
       {
         h: "Hébergeur",
@@ -85,7 +94,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
       {
         h: "Signaler un contenu",
         p: [
-          `Pour toute remarque sur un contenu de ce site, écris à ${manque(L.email)}. Nous répondons sous 48 heures ouvrées.`,
+          `Pour toute remarque sur un contenu de ce site, écris à ${L.email}. Nous répondons sous 48 heures ouvrées.`,
         ],
       },
     ],
@@ -98,7 +107,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
       {
         h: "1. Objet et champ d'application",
         p: [
-          `Les présentes conditions régissent les ventes conclues sur ce site entre ${manque(L.company)} et tout acheteur consommateur. Passer commande implique leur acceptation sans réserve.`,
+          `Les présentes conditions régissent les ventes conclues sur ce site entre ${NOM_EDITEUR} et tout acheteur consommateur. Passer commande implique leur acceptation sans réserve.`,
           "Elles peuvent être modifiées à tout moment ; la version applicable est celle en ligne au jour de la commande.",
         ],
       },
@@ -136,7 +145,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
         h: "6. Droit de rétractation",
         p: [
           "Tu disposes d'un délai de 14 jours à compter de la réception pour te rétracter, sans avoir à te justifier. Nous étendons ce délai à 30 jours à titre commercial.",
-          `Pour l'exercer, il suffit de nous écrire à ${manque(L.email)} avant l'expiration du délai. Le produit doit être renvoyé complet, dans un état permettant sa remise en vente. Les frais de retour sont à ta charge.`,
+          `Pour l'exercer, il suffit de nous écrire à ${L.email} avant l'expiration du délai. Le produit doit être renvoyé complet, dans un état permettant sa remise en vente. Les frais de retour sont à ta charge.`,
           "Le remboursement intervient au plus tard 14 jours après réception du retour, par le même moyen de paiement que celui utilisé lors de l'achat.",
           "Pour des raisons d'hygiène, les pods descellés ou utilisés ne peuvent être repris.",
         ],
@@ -152,7 +161,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
       {
         h: "8. Réclamations et médiation",
         p: [
-          `Toute réclamation doit être adressée à ${manque(L.email)}. Nous répondons sous 48 heures ouvrées.`,
+          `Toute réclamation doit être adressée à ${L.email}. Nous répondons sous 48 heures ouvrées.`,
           mediation,
           "La plateforme européenne de règlement en ligne des litiges est également accessible à l'adresse https://ec.europa.eu/consumers/odr.",
         ],
@@ -172,7 +181,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
     blocks: [
       {
         h: "Responsable du traitement",
-        p: [`${manque(L.company)}, ${manque(L.address)}. Contact : ${manque(L.email)}.`],
+        p: [`${NOM_EDITEUR}, ${L.address}. Contact : ${L.email}.`],
       },
       {
         h: "Données collectées et finalités",
@@ -199,7 +208,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
       {
         h: "Tes droits",
         p: [
-          `Tu disposes d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour l'exercer, écris à ${manque(L.email)} ; nous répondons sous un mois.`,
+          `Tu disposes d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour l'exercer, écris à ${L.email} ; nous répondons sous un mois.`,
           "Tu peux également introduire une réclamation auprès de la CNIL, 3 place de Fontenoy, 75007 Paris — www.cnil.fr.",
         ],
       },
