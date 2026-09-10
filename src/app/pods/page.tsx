@@ -8,10 +8,10 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { faq } from "@/data/faq";
 
 export const metadata: Metadata = {
-  title: "Pods aromatiques : 17 goûts sans sucre",
+  title: "Pods aromatiques : 14 goûts sans sucre",
   alternates: { canonical: "/pods" },
   description:
-    "Dix arômes vendus à l'unité — banane, café, pastèque menthe, ananas, pêche, raisin blanc, pomme, fraise pastèque, fruit du dragon, punch fruité — et sept arômes réservés aux packs gourde. 0 sucre, 0 calorie.",
+    "Sept arômes vendus à l'unité — banane, fruit du dragon, pastèque menthe, pomme, fraise pastèque, café, punch fruité — et sept arômes réservés aux packs gourde. 0 sucre, 0 calorie.",
 };
 
 export default function FlavorsPage() {
@@ -19,8 +19,8 @@ export default function FlavorsPage() {
     <>
       <PageHeader
         eyebrow="Les goûts"
-        title="Dix-sept arômes. Dix à l'unité."
-        text="Des arômes naturels diffusés par l'air, jamais dilués dans l'eau. Dix sont vendus à l'unité : tu choisis exactement celui que tu veux. Les sept autres ne s'obtiennent qu'avec une gourde."
+        title="Quatorze arômes. Sept à l'unité."
+        text="Des arômes naturels diffusés par l'air, jamais dilués dans l'eau. Sept sont vendus à l'unité : tu choisis exactement celui que tu veux. Les sept autres ne s'obtiennent qu'avec une gourde."
       />
 
       <FlavorGrid

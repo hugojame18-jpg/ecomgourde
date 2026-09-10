@@ -17,7 +17,7 @@ export const faq = [
   },
   {
     q: "Quels goûts sont disponibles ?",
-    a: "Sept arômes de base : Fruits rouges, Citron, Orange, Tropical, Cerise, Coco et Fruits des bois — ce sont eux que contient le pack gourde + 7 pods. À l'unité, tu accèdes en plus à des arômes exclusifs (Banane, Café, Pastèque menthe, Ananas, Pêche, Raisin blanc, Pomme, Fraise pastèque, Fruit du dragon, Punch fruité) qui ne sont jamais livrés avec une gourde.",
+    a: "Sept arômes de base : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc — ce sont eux que contient le pack gourde + 7 pods. À l'unité, tu accèdes en plus à sept arômes exclusifs (Banane, Fruit du dragon, Pastèque menthe, Pomme, Fraise pastèque, Café, Punch fruité) qui ne sont jamais livrés avec une gourde.",
   },
   {
     q: "Comment fonctionne l'abonnement ?",

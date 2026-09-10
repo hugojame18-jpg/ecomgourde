@@ -63,7 +63,7 @@ const bottleFeatures = [
 
 const allFlavorsFaq = {
   q: "Puis-je choisir mes goûts ?",
-  a: "Tu n'as pas à choisir : le pack contient les sept arômes de la gamme, un pod de chaque. Fruits rouges, Citron, Orange, Tropical, Cerise, Coco et Fruits des bois sont tous dans la boîte.",
+  a: "Tu n'as pas à choisir : le pack contient les sept arômes de la gamme, un pod de chaque. Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc sont tous dans la boîte.",
 };
 
 const randomFlavorFaq = {
@@ -163,7 +163,7 @@ export const products: Product[] = [
     description: [
       "C'est l'offre que prennent neuf clients sur dix, et pour une bonne raison : six pods de plus ne coûtent que 8,55 € — moins de 1,50 € le pod.",
       "Le corps translucide en Tritan laisse voir exactement ce qu'il te reste à boire. Le bouchon accueille un pod aromatique : l'air passe par le pod avant d'arriver en bouche, et le cerveau perçoit le goût. Zéro sucre, zéro calorie, zéro arôme dans l'eau.",
-      "Les sept pods couvrent toute la gamme, un de chaque arôme : Fruits rouges, Citron, Orange, Tropical, Cerise, Coco et Fruits des bois. Tu n'as rien à choisir, et tu finiras par savoir lequel est ton préféré.",
+      "Les sept pods couvrent toute la gamme, un de chaque arôme : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc. Tu n'as rien à choisir, et tu finiras par savoir lequel est ton préféré.",
     ],
     images: bottleColors[0].gallery,
     visual: { kind: "bundle", color: "#a98ce0", accent: "#ece4fa", count: 7 },
@@ -188,7 +188,7 @@ export const products: Product[] = [
     ],
     includes: [
       "1 Flow Bottle 650 ml (coloris au choix)",
-      "7 pods aromatiques : Fruits rouges, Citron, Orange, Tropical, Cerise, Coco, Fruits des bois",
+      "7 pods aromatiques : Orange, Citron, Énergie, Ananas, Cola, Pêche, Raisin blanc",
       "1 dragonne",
       "Livraison offerte",
     ],

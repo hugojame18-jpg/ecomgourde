@@ -17,7 +17,7 @@ import { useCart } from "@/components/cart/CartProvider";
 export function FlavorGrid({
   eyebrow = "Les goûts",
   title = "Choisis ton arôme.",
-  text = "Dix arômes vendus au pod, un goût par pod. Les sept autres sont réservés aux packs gourde.",
+  text = "Sept arômes vendus au pod, un goût par pod. Les sept autres sont réservés aux packs gourde.",
 }: {
   eyebrow?: string;
   title?: string;
@@ -64,7 +64,7 @@ export function FlavorGrid({
 
         <p className="mt-8 max-w-[62ch] text-[13.5px] leading-relaxed text-ink-400">
           Les arômes marqués « Avec la gourde » ne sont pas vendus seuls : ce sont les sept pods livrés
-          dans le pack gourde + 7 pods. Les dix autres s&apos;achètent au pod, à l&apos;unité.
+          dans le pack gourde + 7 pods. Les sept autres s&apos;achètent au pod, à l&apos;unité.
         </p>
       </div>
 

@@ -28,7 +28,9 @@ const BOTTLE_1_POD: ColorMap = {
   "Bleu ciel": "gid://shopify/ProductVariant/54909258793299",
 };
 
-/** Arôme vendu à l'unité → identifiant de variante Shopify. */
+/** Arôme vendu à l'unité → identifiant de variante Shopify.
+ *  Les arômes du pack (Orange, Citron, Énergie, Ananas, Cola, Pêche, Raisin)
+ *  n'y figurent pas : ils ne s'achètent pas seuls. */
 const PODS: Record<string, string> = {
   banane: "gid://shopify/ProductVariant/54909265477971",
   "fruit-du-dragon": "gid://shopify/ProductVariant/54909270622547",
@@ -37,9 +39,6 @@ const PODS: Record<string, string> = {
   "fraise-pasteque": "gid://shopify/ProductVariant/54909277438291",
   cafe: "gid://shopify/ProductVariant/54909279043923",
   punch: "gid://shopify/ProductVariant/54909280551251",
-  ananas: "gid://shopify/ProductVariant/54909282222419",
-  raisin: "gid://shopify/ProductVariant/54909284647251",
-  peche: "gid://shopify/ProductVariant/54909286187347",
 };
 
 const BOTTLES: Record<string, ColorMap> = {

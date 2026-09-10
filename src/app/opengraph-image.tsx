@@ -57,7 +57,7 @@ export default async function OpenGraphImage() {
           </div>
 
           <div style={{ display: "flex", marginTop: 22, fontSize: 30, color: "#4b5350" }}>
-            0 sucre · 0 calorie · 17 arômes
+            0 sucre · 0 calorie · 14 arômes
           </div>
 
           <div
