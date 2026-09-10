@@ -61,8 +61,9 @@ export function FlavorGrid({
         </ul>
 
         <p className="mt-8 max-w-[62ch] text-[13.5px] leading-relaxed text-ink-400">
-          Aucun de ces arômes ne se vend seul : ils arrivent ensemble, un pod de chaque, dans le pack
-          gourde + 7 pods.
+          Aucun de ces arômes ne se vend seul aujourd&apos;hui : ils arrivent ensemble, un pod de
+          chaque, dans le pack gourde + 7 pods. De nouveaux goûts et des recharges à l&apos;unité
+          seront mis en vente prochainement.
         </p>
       </div>
 

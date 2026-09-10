@@ -17,11 +17,11 @@ export const faq = [
   },
   {
     q: "Quels goûts sont disponibles ?",
-    a: "Sept arômes : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc. Ils sont livrés ensemble dans le pack gourde + 7 pods, un pod de chaque. Les pods ne sont pas vendus séparément pour le moment.",
+    a: "Sept arômes pour le moment : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc. Ils sont livrés ensemble dans le pack gourde + 7 pods, un pod de chaque. D'autres goûts et des recharges à l'unité seront mis en vente prochainement.",
   },
   {
     q: "Que se passe-t-il quand mes pods sont épuisés ?",
-    a: "Les recharges vendues séparément arrivent bientôt. En attendant, la gourde reste utilisable telle quelle : sans pod, c'est une gourde classique de 650 ml.",
+    a: "Les recharges vendues à l'unité arrivent prochainement, avec de nouveaux goûts en plus des sept actuels. En attendant, la gourde reste utilisable telle quelle : sans pod, c'est une gourde classique de 650 ml.",
   },
   {
     q: "Quels sont les délais de livraison ?",

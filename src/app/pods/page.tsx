@@ -28,6 +28,27 @@ export default function FlavorsPage() {
         text="Un pod, un goût, environ 5 litres d'eau parfumée. Les sept arrivent ensemble dans le pack gourde."
       />
 
+      {/* Annonce volontairement sans date ni précommande : on annonce une
+          intention, on ne prend pas d'engagement qu'on ne pourrait pas tenir. */}
+      <section className="section bg-white pt-0">
+        <div className="shell">
+          <div className="rounded-[26px] border border-berry/20 bg-berry-soft px-6 py-8 text-center md:px-10 md:py-10">
+            <p className="eyebrow justify-center text-berry">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-current" />
+              Bientôt
+            </p>
+            <h2 className="mx-auto mt-3 max-w-[22ch] text-[26px] font-bold leading-[1.05] tracking-[-0.035em] md:text-[34px]">
+              D&apos;autres goûts arrivent.
+            </h2>
+            <p className="mx-auto mt-3 max-w-[52ch] text-[15px] leading-relaxed text-ink-600">
+              La gamme ne s&apos;arrête pas à sept. De nouveaux arômes et des recharges vendues à
+              l&apos;unité seront mis en vente prochainement, pour racheter uniquement les goûts que
+              tu préfères.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-mist">
         <div className="shell">
           <SectionHeading

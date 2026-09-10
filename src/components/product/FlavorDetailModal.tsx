@@ -136,8 +136,9 @@ export function FlavorDetailModal({
                     </ButtonLink>
 
                     <p className="mt-2 max-w-[34ch] text-[12.5px] leading-snug text-ink-400">
-                      Cet arôme n&apos;est pas vendu seul : il fait partie des sept pods livrés avec
-                      la gourde.
+                      Cet arôme n&apos;est pas vendu seul aujourd&apos;hui : il fait partie des sept
+                      pods livrés avec la gourde. Les recharges à l&apos;unité arrivent
+                      prochainement.
                     </p>
                   </>
                 )}
@@ -212,7 +213,9 @@ export function FlavorDetailModal({
                         </dt>
                         <dd className="flex items-center gap-3">
                           <Scale value={value} color={flavor.color} />
-                          <span className="w-8 text-right text-[14px] font-semibold">{value}/5</span>
+                          <span className="w-8 text-right text-[14px] font-semibold">
+                            {value}/5
+                          </span>
                         </dd>
                       </div>
                     ))}
