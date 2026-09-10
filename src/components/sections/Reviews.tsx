@@ -9,6 +9,10 @@ import { site } from "@/data/site";
 export function Reviews({ items = reviews }: { items?: typeof reviews }) {
   const track = useRef<HTMLUListElement>(null);
 
+  // Tant qu'aucun avis réel n'a été collecté, la section ne s'affiche pas.
+  // Afficher des témoignages inventés est interdit (directive Omnibus).
+  if (!site.hasRealReviews) return null;
+
   const scrollBy = (dir: 1 | -1) => {
     const el = track.current;
     if (!el) return;

@@ -94,7 +94,7 @@ export function NewsletterPopup() {
               <div className="absolute inset-x-6 bottom-[-14px] top-4">
                 <Image
                   src={asset("/produits/hero-trio.png")}
-                  alt="Les trois coloris de la Flow Bottle"
+                  alt="Les trois coloris de la SUGAR Bottle"
                   fill
                   sizes="440px"
                   className="object-contain object-bottom drop-shadow-[0_16px_24px_rgba(122,40,80,0.18)]"

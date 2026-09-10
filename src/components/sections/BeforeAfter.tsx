@@ -82,7 +82,7 @@ export function BeforeAfter() {
               <div className="relative mx-auto my-6 h-44 w-full max-w-[220px]">
                 <Image
                   src={asset("/produits/bottle-bleu.png")}
-                  alt="La Flow Bottle en Tritan bleu ciel"
+                  alt="La SUGAR Bottle en Tritan bleu ciel"
                   fill
                   sizes="220px"
                   className="object-contain drop-shadow-[0_16px_24px_rgba(0,0,0,0.25)]"
@@ -110,9 +110,9 @@ export function BeforeAfter() {
         <Reveal delay={0.15}>
           <div className="mt-10 grid gap-4 rounded-[28px] bg-brand-soft p-6 text-center md:mt-14 md:grid-cols-3 md:p-8">
             {[
-              { k: "+1,2 L", v: "d'eau bue par jour en moyenne*" },
-              { k: "−340", v: "bouteilles plastique par an*" },
-              { k: "4,8/5", v: "note moyenne sur 2 417 avis" },
+              { k: "650 ml", v: "à portée de main toute la journée" },
+              { k: "≈ 5 L", v: "d'eau parfumée par pod" },
+              { k: "0", v: "sucre, calorie, édulcorant" },
             ].map((s) => (
               <div key={s.k}>
                 <p className="font-display text-[38px] font-bold tracking-[-0.04em] text-brand-dark md:text-[46px]">
@@ -121,9 +121,6 @@ export function BeforeAfter() {
                 <p className="mt-1 text-[13.5px] text-ink-600">{s.v}</p>
               </div>
             ))}
-            <p className="col-span-full text-[11px] text-ink-400">
-              * Chiffres illustratifs présentés à titre de démonstration.
-            </p>
           </div>
         </Reveal>
       </div>

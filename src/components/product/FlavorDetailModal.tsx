@@ -127,7 +127,7 @@ export function FlavorDetailModal({
                 ) : (
                   <>
                     <ButtonLink
-                      href="/produit/flow-bottle-7-pods"
+                      href="/produit/sugar-bottle-7-pods"
                       size="lg"
                       className="mt-6 w-full max-w-[320px] text-white"
                       style={{ background: flavor.color }}

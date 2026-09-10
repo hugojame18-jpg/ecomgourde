@@ -3,7 +3,34 @@
  */
 export const site = {
   name: "SUGAR",
-  legalName: "SUGAR SAS",
+  legalName: "SUGAR",
+
+  /**
+   * IDENTITÉ LÉGALE — à compléter avant toute vente.
+   * Tant qu'un champ reste vide, les pages légales affichent un avertissement
+   * et le site ne doit pas encaisser de commande : ces mentions sont
+   * obligatoires en vente à distance.
+   */
+  legal: {
+    /** raison sociale exacte, telle qu'immatriculée */
+    company: "",
+    /** ex. « Entreprise individuelle (micro-entreprise) » */
+    form: "",
+    /** 9 chiffres */
+    siren: "",
+    /** adresse du siège, telle que déclarée */
+    address: "",
+    /** personne responsable de la publication */
+    publisher: "",
+    /** adresse e-mail du service client, publiée sur le site */
+    email: "",
+    /** facultatif */
+    phone: "",
+    /** organisme de médiation de la consommation (adhésion obligatoire) */
+    mediator: "",
+    /** TVA : laisse tel quel en franchise en base, sinon indique ton numéro */
+    vat: "TVA non applicable, article 293 B du CGI",
+  },
   tagline: "Boire plus. Sans compromis.",
   /**
    * URL publique du site. Renseigne NEXT_PUBLIC_SITE_URL dans .env.local (et chez

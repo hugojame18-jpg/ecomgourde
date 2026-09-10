@@ -67,7 +67,7 @@ export function Hero() {
         <div className="relative w-full flex-1 md:aspect-[1433/1020] md:flex-none">
           <Image
             src={asset("/produits/hero-trio.png")}
-            alt="Les Flow Bottle en lilas, noir et bleu ciel"
+            alt="Les SUGAR Bottle en lilas, noir et bleu ciel"
             fill
             priority
             sizes="(max-width: 1180px) 100vw, 1180px"

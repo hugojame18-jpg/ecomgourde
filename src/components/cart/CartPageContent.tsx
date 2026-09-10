@@ -13,7 +13,7 @@ import { formatPrice } from "@/lib/format";
 import { flavorName } from "@/data/flavors";
 import { getProduct, products } from "@/data/products";
 
-const recoSlugs = ["flow-bottle-7-pods", "flow-bottle"];
+const recoSlugs = ["sugar-bottle-7-pods", "sugar-bottle"];
 
 export function CartPageContent() {
   const {
@@ -54,7 +54,7 @@ export function CartPageContent() {
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="/produit/flow-bottle-7-pods" variant="brand" size="lg">
+          <ButtonLink href="/produit/sugar-bottle-7-pods" variant="brand" size="lg">
             Voir l'offre 7 pods
           </ButtonLink>
           <ButtonLink href="/pods" variant="outline" size="lg">

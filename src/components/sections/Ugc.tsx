@@ -9,6 +9,9 @@ import { site } from "@/data/site";
  * Ajoute une URL dans `video` (data/reviews.ts) pour remplacer le placeholder.
  */
 export function Ugc() {
+  // Mêmes raisons que la section d'avis : pas de contenu client inventé.
+  if (!site.hasRealReviews) return null;
+
   return (
     <section className="section overflow-hidden bg-white">
       <div className="shell">

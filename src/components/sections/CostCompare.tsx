@@ -60,7 +60,7 @@ export function CostCompare() {
 
         <Reveal delay={0.15}>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <ButtonLink href="/produit/flow-bottle-7-pods" variant="brand" size="lg">
+            <ButtonLink href="/produit/sugar-bottle-7-pods" variant="brand" size="lg">
               Commander avec 7 pods
             </ButtonLink>
             <p className="text-[13px] text-white/45">

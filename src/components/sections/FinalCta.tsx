@@ -27,7 +27,7 @@ export function FinalCta() {
                   pour changer d&apos;avis, sans discussion.
                 </p>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <ButtonLink href="/produit/flow-bottle-7-pods" variant="primary" size="lg">
+                  <ButtonLink href="/produit/sugar-bottle-7-pods" variant="primary" size="lg">
                     Commander avec 7 pods
                   </ButtonLink>
                   <ButtonLink

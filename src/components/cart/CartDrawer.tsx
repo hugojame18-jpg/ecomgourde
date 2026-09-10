@@ -89,7 +89,7 @@ export function CartDrawer() {
                       Commence par le Starter Pack, c&apos;est le plus choisi.
                     </p>
                   </div>
-                  <ButtonLink href="/produit/flow-bottle-7-pods" variant="brand" onClick={closeCart}>
+                  <ButtonLink href="/produit/sugar-bottle-7-pods" variant="brand" onClick={closeCart}>
                     Voir l'offre 7 pods
                   </ButtonLink>
                 </div>

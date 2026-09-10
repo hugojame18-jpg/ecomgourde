@@ -82,15 +82,17 @@ export function ProductDetail({ product }: { product: Product }) {
                 {product.badge}
               </span>
             ) : null}
-            <span className="flex items-center gap-2">
-              <Rating value={product.rating} size={14} showValue />
-              <a
-                href="#avis-produit"
-                className="text-[13px] text-ink-400 underline underline-offset-4 hover:text-ink"
-              >
-                {product.reviewCount.toLocaleString("fr-FR")} avis
-              </a>
-            </span>
+            {site.hasRealReviews ? (
+              <span className="flex items-center gap-2">
+                <Rating value={product.rating} size={14} showValue />
+                <a
+                  href="#avis-produit"
+                  className="text-[13px] text-ink-400 underline underline-offset-4 hover:text-ink"
+                >
+                  {product.reviewCount.toLocaleString("fr-FR")} avis
+                </a>
+              </span>
+            ) : null}
           </div>
 
           <h1
@@ -186,7 +188,7 @@ export function ProductDetail({ product }: { product: Product }) {
                   <>
                     1 pod pris au hasard parmi ces 7 arômes.{" "}
                     <Link
-                      href="/produit/flow-bottle-7-pods"
+                      href="/produit/sugar-bottle-7-pods"
                       className="font-semibold text-berry underline underline-offset-2"
                     >
                       Les vouloir tous les sept

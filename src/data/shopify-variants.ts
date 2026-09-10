@@ -37,8 +37,8 @@ const PODS: Record<string, string> = {
 };
 
 const BOTTLES: Record<string, ColorMap> = {
-  "flow-bottle-7-pods": BOTTLE_7_PODS,
-  "flow-bottle": BOTTLE_SEULE,
+  "sugar-bottle-7-pods": BOTTLE_7_PODS,
+  "sugar-bottle": BOTTLE_SEULE,
 };
 
 /**

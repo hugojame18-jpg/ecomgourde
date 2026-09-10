@@ -3,6 +3,7 @@ import type { Product } from "@/lib/types";
 import { ProductMedia } from "@/components/visuals/ProductVisual";
 import { Price, Rating, ProductBadge } from "@/components/ui/Primitives";
 import { formatPrice, cx } from "@/lib/format";
+import { site } from "@/data/site";
 
 export function BundleCard({ product, featured }: { product: Product; featured?: boolean }) {
   const saving = (product.compareAtPrice ?? product.price) - product.price;
@@ -42,7 +43,9 @@ export function BundleCard({ product, featured }: { product: Product; featured?:
       </Link>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <Rating value={product.rating} count={product.reviewCount} size={13} />
+        {site.hasRealReviews ? (
+          <Rating value={product.rating} count={product.reviewCount} size={13} />
+        ) : null}
         <h3 className="mt-2 text-[24px] font-bold tracking-[-0.03em] md:text-[27px]">
           <Link href={`/produit/${product.slug}`}>{product.name}</Link>
         </h3>

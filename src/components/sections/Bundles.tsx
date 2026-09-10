@@ -35,7 +35,7 @@ export function Bundles({ compact }: { compact?: boolean }) {
         <div className="mt-10 grid gap-5 md:mt-14 md:grid-cols-3">
           {list.map((b, i) => (
             <Reveal key={b.id} delay={i * 0.08} className="h-full">
-              <BundleCard product={b} featured={b.slug === "flow-bottle-7-pods"} />
+              <BundleCard product={b} featured={b.slug === "sugar-bottle-7-pods"} />
             </Reveal>
           ))}
         </div>

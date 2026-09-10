@@ -6,6 +6,7 @@ import { ProductMedia } from "@/components/visuals/ProductVisual";
 import { Price, Rating, ProductBadge } from "@/components/ui/Primitives";
 import { AddToCartButton } from "@/components/cart/AddToCartButton";
 import { cx } from "@/lib/format";
+import { site } from "@/data/site";
 
 export function ProductCard({
   product,
@@ -76,7 +77,9 @@ export function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col gap-1.5 pt-4">
-        <Rating value={product.rating} count={product.reviewCount} size={12} />
+        {site.hasRealReviews ? (
+          <Rating value={product.rating} count={product.reviewCount} size={12} />
+        ) : null}
         <h3 className="text-[17px] font-semibold leading-tight tracking-[-0.02em]">
           <Link href={`/produit/${product.slug}`} className="hover:opacity-70">
             {product.name}

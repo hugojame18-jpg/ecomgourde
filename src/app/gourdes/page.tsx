@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Gourde à pods aromatiques 650 ml en Tritan",
   alternates: { canonical: "/gourdes" },
   description:
-    "La Flow Bottle : gourde 650 ml en Tritan translucide avec porte-pod intégré. Disponible seule, ou avec les 7 arômes de la gamme.",
+    "La SUGAR Bottle : gourde 650 ml en Tritan translucide avec porte-pod intégré. Disponible seule, ou avec les 7 arômes de la gamme.",
 };
 
 export default function ShopPage() {

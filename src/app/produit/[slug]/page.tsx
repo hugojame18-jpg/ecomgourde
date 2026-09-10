@@ -220,31 +220,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* Avis */}
-      <section id="avis-produit" className="section bg-mist">
-        <div className="shell">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <SectionHeading eyebrow="Avis vérifiés" title="Ce qu'en disent les clients." />
-            <div className="flex items-center gap-3">
-              <Rating value={product.rating} size={18} showValue />
-              <span className="text-[14px] text-ink-600">
-                {product.reviewCount.toLocaleString("fr-FR")} avis
-              </span>
-            </div>
-          </div>
-          <ul className="mt-8 grid gap-4 md:mt-12 md:grid-cols-3">
-            {productReviews.map((r) => (
-              <li key={r.id}>
-                <ReviewCard review={r} />
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 text-[11.5px] text-ink-400">
-            Avis de démonstration — à remplacer par tes vrais avis clients.
-          </p>
-        </div>
-      </section>
-
       {/* Produits similaires */}
       <section className="section bg-white">
         <div className="shell">

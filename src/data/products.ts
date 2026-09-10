@@ -90,9 +90,9 @@ const bottleFaq = (flavorFaq: { q: string; a: string }) => [
 export const products: Product[] = [
   /* ---------- OFFRE DE BASE : la gourde seule ---------- */
   {
-    id: "flow-bottle",
-    slug: "flow-bottle",
-    name: "Flow Bottle",
+    id: "sugar-bottle",
+    slug: "sugar-bottle",
+    name: "SUGAR Bottle",
     tagline: "Gourde 650 ml en Tritan, sans pod",
     category: "bundle",
     freeShipping: true,
@@ -105,7 +105,7 @@ export const products: Product[] = [
     shortDescription:
       "La gourde Tritan translucide, seule. Pour qui a déjà des pods, ou veut une deuxième gourde à la maison.",
     description: [
-      "La Flow Bottle a été dessinée autour d'une idée simple : rendre l'eau assez agréable pour qu'on la boive sans y penser.",
+      "La SUGAR Bottle a été dessinée autour d'une idée simple : rendre l'eau assez agréable pour qu'on la boive sans y penser.",
       "Le corps translucide en Tritan laisse voir exactement ce qu'il te reste à boire. Le bouchon accueille un pod aromatique : l'air passe par le pod avant d'arriver en bouche, et le cerveau perçoit le goût. Zéro sucre, zéro calorie, zéro arôme dans l'eau.",
       "Cette offre ne contient aucun pod. Si c'est ta première gourde, prends plutôt le pack avec les sept arômes : tu ne paieras que 8,55 € de plus.",
     ],
@@ -131,7 +131,7 @@ export const products: Product[] = [
       },
     ],
     includes: [
-      "1 Flow Bottle 650 ml (coloris au choix)",
+      "1 SUGAR Bottle 650 ml (coloris au choix)",
       "1 dragonne",
       "Livraison offerte",
     ],
@@ -141,9 +141,9 @@ export const products: Product[] = [
 
   /* ---------- OFFRE PRINCIPALE : gourde + 7 pods ---------- */
   {
-    id: "flow-bottle-7-pods",
-    slug: "flow-bottle-7-pods",
-    name: "Flow Bottle + 7 pods",
+    id: "sugar-bottle-7-pods",
+    slug: "sugar-bottle-7-pods",
+    name: "SUGAR Bottle + 7 pods",
     tagline: "Gourde 650 ml + les 7 arômes",
     category: "bundle",
     freeShipping: true,
@@ -185,7 +185,7 @@ export const products: Product[] = [
       },
     ],
     includes: [
-      "1 Flow Bottle 650 ml (coloris au choix)",
+      "1 SUGAR Bottle 650 ml (coloris au choix)",
       "7 pods aromatiques : Orange, Citron, Énergie, Ananas, Cola, Pêche, Raisin blanc",
       "1 dragonne",
       "Livraison offerte",
@@ -243,7 +243,7 @@ export const podProducts: Product[] = flavors
     specs: [
       { label: "Contenu", value: "1 pod" },
       { label: "Autonomie", value: `≈ ${litresPerPack} L` },
-      { label: "Compatibilité", value: "Toutes les Flow Bottle" },
+      { label: "Compatibilité", value: "Toutes les SUGAR Bottle" },
     ],
   }));
 
@@ -260,7 +260,7 @@ export const accessories = () => byCategory("accessory");
 export const featured = () => products;
 
 /** Produit mis en avant partout comme offre principale. */
-export const heroProduct = () => getProduct("flow-bottle-7-pods")!;
+export const heroProduct = () => getProduct("sugar-bottle-7-pods")!;
 
 /**
  * Abonnement — désactivé tant que les recharges de pods seules ne sont pas

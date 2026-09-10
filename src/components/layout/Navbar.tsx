@@ -153,7 +153,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-1 md:gap-2">
           <Link
-            href="/produit/flow-bottle-7-pods"
+            href="/produit/sugar-bottle-7-pods"
             className="hidden rounded-full bg-brand-soft px-4 py-2 text-[13px] font-semibold text-brand-dark transition-colors hover:bg-brand hover:text-ink lg:inline-flex"
           >
             Gourde + 7 pods · 33,45 €
@@ -217,7 +217,7 @@ export function Navbar() {
               </div>
 
               <Link
-                href="/produit/flow-bottle-7-pods"
+                href="/produit/sugar-bottle-7-pods"
                 className="flex items-center justify-between rounded-2xl bg-berry px-5 py-4 text-white"
               >
                 <span>

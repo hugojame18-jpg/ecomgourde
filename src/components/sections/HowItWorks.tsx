@@ -148,7 +148,7 @@ export function HowItWorks() {
 
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-col items-center gap-3 md:mt-14">
-            <ButtonLink href="/produit/flow-bottle-7-pods" variant="primary" size="lg">
+            <ButtonLink href="/produit/sugar-bottle-7-pods" variant="primary" size="lg">
               Commander avec 7 pods
             </ButtonLink>
             <p className="text-[13px] text-ink-400">
