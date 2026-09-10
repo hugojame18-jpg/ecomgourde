@@ -25,6 +25,6 @@ export const faq = [
   },
   {
     q: "Quels sont les délais de livraison ?",
-    a: "Les commandes passées avant 14 h partent le jour même. Comptez 2 à 3 jours ouvrés en France métropolitaine, 3 à 5 jours en Europe. Livraison offerte sur toutes les gourdes.",
+    a: "Compte 5 à 10 jours entre ta commande et sa réception. Tu reçois un numéro de suivi dès que le colis part. Livraison offerte sur toutes les gourdes.",
   },
 ];

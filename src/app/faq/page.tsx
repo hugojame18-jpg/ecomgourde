@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const shipping = [
   {
     q: "Quels sont les délais de livraison ?",
-    a: "Commande avant 14 h = expédition le jour même. 2 à 3 jours ouvrés en France métropolitaine, 3 à 5 jours en Europe.",
+    a: "Compte 5 à 10 jours entre ta commande et sa réception, suivi fourni dès l'expédition.",
   },
   {
     q: "Combien coûte la livraison ?",

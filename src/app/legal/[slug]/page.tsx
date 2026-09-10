@@ -31,7 +31,7 @@ const pages: Record<string, { title: string; intro: string; blocks: { h: string;
       },
       {
         h: "Livraison",
-        p: `Expédition sous 24 h ouvrées, livraison en 2 à 3 jours en France. Livraison offerte dès ${site.freeShippingThreshold} €.`,
+        p: `Livraison en 5 à 10 jours en France, suivi communiqué dès l'expédition. Livraison offerte dès ${site.freeShippingThreshold} €.`,
       },
       {
         h: "Rétractation",

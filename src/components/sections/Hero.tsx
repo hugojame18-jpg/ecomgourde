@@ -14,7 +14,7 @@ const claims = [
   { label: "7 goûts", color: "#ff5c8a" },
   { label: "Sans engagement", color: "#ffab3d" },
   { label: "Fabriqué en Europe", color: "#b98cff" },
-  { label: "Livraison en 48 h", color: "#00c9b6" },
+  { label: "Livraison offerte", color: "#00c9b6" },
 ];
 
 export function Hero() {

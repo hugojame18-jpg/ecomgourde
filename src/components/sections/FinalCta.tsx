@@ -39,7 +39,7 @@ export function FinalCta() {
                   </ButtonLink>
                 </div>
                 <p className="mt-4 text-[13px] text-ink/60">
-                  🚚 Livraison offerte dès {site.freeShippingThreshold} € · ⚡ Expédié en 24 h
+                  🚚 Livraison offerte · 📦 5 à 10 jours
                 </p>
               </div>
               <div className="relative mx-auto h-56 w-full max-w-[320px] md:h-80">
