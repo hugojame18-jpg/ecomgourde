@@ -11,21 +11,19 @@ import { RevealItem } from "@/components/ui/Reveal";
 import { useCart } from "@/components/cart/CartProvider";
 
 /**
- * Grille des goûts — ici le client CHOISIT son arôme (vente de pods à l'unité).
- * Clic sur une carte => fiche détaillée en modale.
+ * Grille des goûts. Aucun n'est vendu seul : la carte ouvre la fiche détaillée,
+ * qui renvoie vers le pack contenant les sept.
  */
 export function FlavorGrid({
   eyebrow = "Les goûts",
-  title = "Choisis ton arôme.",
-  text = "Sept arômes vendus au pod, un goût par pod. Les sept autres sont réservés aux packs gourde.",
+  title = "Les sept arômes du pack.",
+  text = "Sept arômes, un pod de chaque dans le pack gourde. Un pod parfume environ 5 litres.",
 }: {
   eyebrow?: string;
   title?: string;
   text?: string;
 }) {
-  // Les arômes achetables à l'unité en premier : ce sont les seuls qui peuvent
-  // être mis au panier depuis cette grille.
-  const ordered = [...flavors].sort((a, b) => Number(!!b.soloOnly) - Number(!!a.soloOnly));
+  const ordered = flavors;
   const [open, setOpen] = useState<Flavor | null>(null);
   const { add } = useCart();
 
@@ -63,8 +61,8 @@ export function FlavorGrid({
         </ul>
 
         <p className="mt-8 max-w-[62ch] text-[13.5px] leading-relaxed text-ink-400">
-          Les arômes marqués « Avec la gourde » ne sont pas vendus seuls : ce sont les sept pods livrés
-          dans le pack gourde + 7 pods. Les sept autres s&apos;achètent au pod, à l&apos;unité.
+          Aucun de ces arômes ne se vend seul : ils arrivent ensemble, un pod de chaque, dans le pack
+          gourde + 7 pods.
         </p>
       </div>
 

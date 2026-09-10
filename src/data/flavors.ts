@@ -2,11 +2,10 @@ import type { Flavor, Nutrition } from "@/lib/types";
 import { asset } from "@/lib/asset";
 
 /**
- * LA GAMME — 7 arômes livrés avec la gourde + 7 arômes vendus au pod.
+ * LA GAMME — 7 arômes, livrés uniquement avec la gourde.
  *
- * Les sept premiers (`baseFlavors`) composent le pack « gourde + 7 pods » :
- * un pod de chaque, jamais vendus seuls.
- * Les autres (`soloFlavors`) ne s'achètent qu'à l'unité.
+ * Ils composent le pack « gourde + 7 pods » : un pod de chaque. Aucun pod
+ * n'est vendu séparément tant que le fournisseur n'en propose pas à l'unité.
  *
  * 📸 `image` = visuel de la carte (photo du fruit, ou le pod lui-même quand il
  * n'y a pas de fruit à montrer). `podImage` = photo du pod.
@@ -23,13 +22,6 @@ const FRUIT_IMAGES: Record<string, { file: string; fit: "contain" | "cover" }> =
   ananas: { file: "ananas.png", fit: "contain" },
   peche: { file: "peche.png", fit: "contain" },
   raisin: { file: "raisin.png", fit: "contain" },
-  banane: { file: "banane.png", fit: "contain" },
-  "fruit-du-dragon": { file: "fruit-du-dragon.png", fit: "contain" },
-  "pasteque-menthe": { file: "pasteque-menthe.png", fit: "contain" },
-  pomme: { file: "pomme.png", fit: "contain" },
-  "fraise-pasteque": { file: "fraise-pasteque.png", fit: "contain" },
-  cafe: { file: "cafe.png", fit: "contain" },
-  punch: { file: "punch.png", fit: "contain" },
 };
 
 const fruitPhoto = (id: string) =>
@@ -153,137 +145,11 @@ const baseFlavors: Flavor[] = [
   },
 ];
 
-/**
- * ARÔMES VENDUS À L'UNITÉ UNIQUEMENT.
- * Ils n'entrent jamais dans le pack « gourde + 7 pods ».
- */
-const soloFlavors: Flavor[] = [
-  {
-    id: "banane",
-    name: "Banane",
-    image: fruitPhoto("banane"),
-    podImage: asset("/produits/pod-banane.png"),
-    color: "#e8b93a",
-    soft: "#fdf3d6",
-    notes: ["Banane mûre", "Lait d'amande", "Vanille"],
-    headline: "Doux, rond, réconfortant.",
-    description:
-      "Banane bien mûre adoucie d'une note lactée. L'arôme le plus gourmand de la gamme, celui qui passe même le matin.",
-    price: 7.9,
-    intensity: 3,
-    intensityLabel: "Enveloppant, jamais écœurant.",
-    profile: { doux: 5, aigre: 1, fruite: 4 },
-    soloOnly: true,
-  },
-  {
-    id: "fruit-du-dragon",
-    name: "Fruit du dragon",
-    image: fruitPhoto("fruit-du-dragon"),
-    podImage: asset("/produits/pod-fruit-du-dragon.png"),
-    color: "#e8447c",
-    soft: "#fde3ec",
-    notes: ["Pitaya", "Fruit de la passion", "Litchi"],
-    headline: "Exotique et légèrement acidulé.",
-    description:
-      "Pitaya rose et fruit de la passion, relevés d'une pointe de litchi. Le plus original de la gamme.",
-    price: 7.9,
-    intensity: 4,
-    intensityLabel: "Vif, parfumé, un peu inattendu.",
-    profile: { doux: 3, aigre: 3, fruite: 5 },
-    soloOnly: true,
-  },
-  {
-    id: "pasteque-menthe",
-    name: "Pastèque menthe",
-    image: fruitPhoto("pasteque-menthe"),
-    podImage: asset("/produits/pod-pasteque-menthe.png"),
-    color: "#4bb573",
-    soft: "#e0f4e6",
-    notes: ["Pastèque", "Menthe fraîche", "Citron vert"],
-    headline: "La fraîcheur d'un mojito sans alcool.",
-    description:
-      "Pastèque juteuse et menthe fraîche, avec un trait de citron vert. L'arôme des grosses chaleurs et des fins de séance.",
-    price: 7.9,
-    intensity: 4,
-    intensityLabel: "Très frais, presque mentholé.",
-    profile: { doux: 3, aigre: 3, fruite: 4 },
-    soloOnly: true,
-  },
-  {
-    id: "pomme",
-    name: "Pomme",
-    image: fruitPhoto("pomme"),
-    podImage: asset("/produits/pod-pomme.png"),
-    color: "#d5566a",
-    soft: "#fbe4e7",
-    notes: ["Pomme rouge", "Pomme verte", "Fleur de sureau"],
-    headline: "Simple, net, jamais lassant.",
-    description:
-      "Pomme rouge croquante et pointe de pomme verte, sur un fond de fleur de sureau. Le goût passe-partout de la gamme.",
-    price: 7.9,
-    intensity: 3,
-    intensityLabel: "Franc et équilibré.",
-    profile: { doux: 4, aigre: 3, fruite: 4 },
-    soloOnly: true,
-  },
-  {
-    id: "fraise-pasteque",
-    name: "Fraise pastèque",
-    image: fruitPhoto("fraise-pasteque"),
-    podImage: asset("/produits/pod-fraise-pasteque.png"),
-    color: "#f0526b",
-    soft: "#fde2e6",
-    notes: ["Fraise", "Pastèque", "Basilic"],
-    headline: "L'été en deux fruits.",
-    description:
-      "Fraise sucrée et pastèque désaltérante, réveillées par une feuille de basilic. Le duo qui plaît à tout le monde.",
-    price: 7.9,
-    intensity: 4,
-    intensityLabel: "Gourmand et très facile.",
-    profile: { doux: 5, aigre: 2, fruite: 5 },
-    soloOnly: true,
-  },
-  {
-    id: "cafe",
-    name: "Café",
-    image: fruitPhoto("cafe"),
-    podImage: asset("/produits/pod-cafe.png"),
-    color: "#8a5a3b",
-    soft: "#efe3d8",
-    notes: ["Café torréfié", "Crème", "Noisette"],
-    headline: "L'odeur du café, sans la caféine.",
-    description:
-      "Grains torréfiés et note crémeuse de noisette. Un arôme qui surprend au premier verre, et qu'on garde pour les après-midi de travail.",
-    price: 7.9,
-    intensity: 5,
-    intensityLabel: "Le plus marqué des arômes à l'unité.",
-    profile: { doux: 3, aigre: 1, fruite: 1 },
-    soloOnly: true,
-  },
-  {
-    id: "punch",
-    name: "Punch fruité",
-    image: fruitPhoto("punch"),
-    podImage: asset("/produits/pod-punch.png"),
-    color: "#f2762b",
-    soft: "#fdeadb",
-    notes: ["Multifruits", "Agrumes", "Fruits rouges"],
-    headline: "Le cocktail complet, sans une goutte d'alcool.",
-    description:
-      "Un mélange d'agrumes, de fruits rouges et de fruits jaunes, comme un punch de fête servi bien frais.",
-    price: 7.9,
-    intensity: 4,
-    intensityLabel: "Généreux, plein de fruits.",
-    profile: { doux: 4, aigre: 3, fruite: 5 },
-    soloOnly: true,
-  },
-];
-
 /** Les 7 arômes du pack « gourde + 7 pods ». */
 export const packFlavors = baseFlavors;
 
 /** Toute la gamme. Sans photo de fruit, la carte montre le pod. */
-export const flavors: Flavor[] = [...baseFlavors, ...soloFlavors].map((f) => ({
+export const flavors: Flavor[] = baseFlavors.map((f) => ({
   ...f,
   image: f.image ?? f.podImage,
 }));

@@ -44,7 +44,15 @@ export function Footer() {
                 className="grid h-11 w-11 place-items-center rounded-full bg-white/8 transition-colors hover:bg-brand hover:text-ink"
               >
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.7" />
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                  />
                   <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
                   <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" />
                 </svg>
@@ -92,18 +100,19 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <p className="eyebrow text-white/40">Newsletter</p>
             <p className="text-[15px] leading-relaxed text-white/55">
-              −{site.firstOrderDiscount} % sur ta première commande, les nouveaux goûts en avant-première.
+              −{site.firstOrderDiscount} % sur ta première commande, les nouveaux goûts en
+              avant-première.
             </p>
             <NewsletterForm tone="dark" />
           </div>
         </div>
 
         <div className="mt-14 flex flex-wrap gap-2 border-t border-white/10 pt-8">
-          {/* Seuls les arômes vendus à l'unité ont une fiche produit. */}
-          {flavors.filter((f) => f.soloOnly).map((f) => (
+          {/* Les arômes n'ont pas de fiche propre : tous mènent à la page Goûts. */}
+          {flavors.map((f) => (
             <Link
               key={f.id}
-              href={`/produit/pod-${f.id}`}
+              href="/pods"
               className="rounded-full border border-white/12 px-3.5 py-1.5 text-[12.5px] text-white/60 transition-colors hover:border-transparent hover:text-ink"
             >
               <span className="inline-flex items-center gap-2">

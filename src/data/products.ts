@@ -68,7 +68,7 @@ const allFlavorsFaq = {
 
 const randomFlavorFaq = {
   q: "Puis-je choisir mon goût ?",
-  a: "Pas sur cette offre : le pod livré avec la gourde est tiré au hasard dans la gamme. Si tu veux un arôme précis, prends le pack des sept goûts, ou achète tes pods à l'unité.",
+  a: "Pas sur cette offre : le pod livré avec la gourde est tiré au hasard dans la gamme. Si tu veux les sept arômes, prends le pack complet.",
 };
 
 const bottleFaq = (flavorFaq: { q: string; a: string }) => [

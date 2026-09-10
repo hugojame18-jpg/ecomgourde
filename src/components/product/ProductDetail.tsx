@@ -186,10 +186,10 @@ export function ProductDetail({ product }: { product: Product }) {
                   <>
                     1 pod pris au hasard parmi ces 7 arômes.{" "}
                     <Link
-                      href="/pods"
+                      href="/produit/flow-bottle-7-pods"
                       className="font-semibold text-berry underline underline-offset-2"
                     >
-                      Choisir un goût précis
+                      Les vouloir tous les sept
                     </Link>
                   </>
                 )}

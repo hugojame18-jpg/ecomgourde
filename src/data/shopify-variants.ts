@@ -32,13 +32,8 @@ const BOTTLE_1_POD: ColorMap = {
  *  Les arômes du pack (Orange, Citron, Énergie, Ananas, Cola, Pêche, Raisin)
  *  n'y figurent pas : ils ne s'achètent pas seuls. */
 const PODS: Record<string, string> = {
-  banane: "gid://shopify/ProductVariant/54909265477971",
-  "fruit-du-dragon": "gid://shopify/ProductVariant/54909270622547",
-  "pasteque-menthe": "gid://shopify/ProductVariant/54909271933267",
-  pomme: "gid://shopify/ProductVariant/54909273276755",
-  "fraise-pasteque": "gid://shopify/ProductVariant/54909277438291",
-  cafe: "gid://shopify/ProductVariant/54909279043923",
-  punch: "gid://shopify/ProductVariant/54909280551251",
+  // Vide : aucun pod n'est vendu séparément aujourd'hui. Le jour où le
+  // fournisseur en propose, ajoute ici l'identifiant de sa variante Shopify.
 };
 
 const BOTTLES: Record<string, ColorMap> = {

@@ -11,7 +11,7 @@ const claims = [
   { label: "0 calorie", color: "#ffab3d" },
   { label: "0 édulcorant", color: "#b98cff" },
   { label: "Tritan sans BPA", color: "#00c9b6" },
-  { label: "14 goûts", color: "#ff5c8a" },
+  { label: "7 goûts", color: "#ff5c8a" },
   { label: "Sans engagement", color: "#ffab3d" },
   { label: "Fabriqué en Europe", color: "#b98cff" },
   { label: "Livraison en 48 h", color: "#00c9b6" },

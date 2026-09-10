@@ -208,7 +208,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <FlavorGrid
           eyebrow="Les 7 arômes"
           title="Les autres goûts."
-          text="Vendus à l'unité, tu choisis exactement celui que tu veux. Le pack de 7 pods, lui, les contient tous."
+          text="Les sept arômes livrés avec la gourde, un pod de chaque."
         />
       ) : null}
 

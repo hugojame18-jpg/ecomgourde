@@ -17,7 +17,7 @@ export const faq = [
   },
   {
     q: "Quels goûts sont disponibles ?",
-    a: "Sept arômes de base : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc — ce sont eux que contient le pack gourde + 7 pods. À l'unité, tu accèdes en plus à sept arômes exclusifs (Banane, Fruit du dragon, Pastèque menthe, Pomme, Fraise pastèque, Café, Punch fruité) qui ne sont jamais livrés avec une gourde.",
+    a: "Sept arômes : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc. Ils sont livrés ensemble dans le pack gourde + 7 pods, un pod de chaque. Les pods ne sont pas vendus séparément pour le moment.",
   },
   {
     q: "Comment fonctionne l'abonnement ?",
@@ -25,6 +25,6 @@ export const faq = [
   },
   {
     q: "Quels sont les délais de livraison ?",
-    a: "Les commandes passées avant 14 h partent le jour même. Comptez 2 à 3 jours ouvrés en France métropolitaine, 3 à 5 jours en Europe. Livraison offerte sur toutes les gourdes. Pour des pods achetés seuls, elle est de 1,50 € (offerte dès 24,90 € d'achat).",
+    a: "Les commandes passées avant 14 h partent le jour même. Comptez 2 à 3 jours ouvrés en France métropolitaine, 3 à 5 jours en Europe. Livraison offerte sur toutes les gourdes.",
   },
 ];

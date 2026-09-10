@@ -158,7 +158,12 @@ export function Navbar() {
           >
             Gourde + 7 pods · 33,45 €
           </Link>
-          <button type="button" onClick={openCart} aria-label="Ouvrir le panier" className="text-white lg:text-ink">
+          <button
+            type="button"
+            onClick={openCart}
+            aria-label="Ouvrir le panier"
+            className="text-white lg:text-ink"
+          >
             <CartIcon count={count} />
           </button>
         </div>
@@ -197,11 +202,11 @@ export function Navbar() {
               <div>
                 <p className="eyebrow mb-3 text-ink-400">Les goûts</p>
                 <div className="flex flex-wrap gap-2">
-                  {/* Seuls les arômes vendus à l'unité ont une fiche produit. */}
-          {flavors.filter((f) => f.soloOnly).map((f) => (
+                  {/* Les arômes n'ont pas de fiche propre : tous mènent à la page Goûts. */}
+                  {flavors.map((f) => (
                     <Link
                       key={f.id}
-                      href={`/produit/pod-${f.id}`}
+                      href="/pods"
                       className="rounded-full px-3.5 py-2 text-[13px] font-semibold"
                       style={{ background: f.soft, color: f.color }}
                     >
