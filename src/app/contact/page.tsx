@@ -6,15 +6,16 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact & service client",
   alternates: { canonical: "/contact" },
-  description: "Une question sur ta commande, un pod, ton abonnement ? On répond en moins de 24 h.",
+  description:
+    "Une question sur ta commande, sur la gourde ou sur les arômes ? On répond sous 48 h ouvrées.",
 };
 
 const channels = [
   {
     icon: "✉️",
     title: "E-mail",
-    text: "bonjour@sugar.example",
-    detail: "Réponse en moins de 24 h, du lundi au vendredi.",
+    text: site.legal.email,
+    detail: "Réponse sous 48 h ouvrées, du lundi au vendredi.",
   },
   {
     icon: "💬",
@@ -36,7 +37,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="On est joignables. Vraiment."
-        text="Une équipe de trois personnes, basée à Lyon, qui répond elle-même aux messages."
+        text="Une adresse, une vraie personne derrière. Écris quand tu veux, on répond sous 48 h ouvrées."
       />
 
       <section className="section bg-white">

@@ -13,17 +13,17 @@ export const site = {
    */
   legal: {
     /** raison sociale exacte, telle qu'immatriculée */
-    company: "",
+    company: "Lucas Vandendriessche",
     /** ex. « Entreprise individuelle (micro-entreprise) » */
-    form: "",
+    form: "Entrepreneur individuel (EI)",
     /** 9 chiffres */
-    siren: "",
+    siren: "910 384 650",
     /** adresse du siège, telle que déclarée */
-    address: "",
+    address: "Avenue Las Bordes, 64420 Soumoulou, France",
     /** personne responsable de la publication */
-    publisher: "",
+    publisher: "Lucas Vandendriessche",
     /** adresse e-mail du service client, publiée sur le site */
-    email: "",
+    email: "kirenagency@gmail.com",
     /** facultatif */
     phone: "",
     /** organisme de médiation de la consommation (adhésion obligatoire) */

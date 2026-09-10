@@ -19,7 +19,17 @@ import { site } from "@/data/site";
 
 const L = site.legal;
 const manque = (v: string) => (v.trim() ? v : "[à compléter]");
-const incomplet = [L.company, L.siren, L.address, L.email].some((v) => !v.trim());
+
+/** Mentions sans lesquelles le site ne doit pas encaisser de commande. */
+const CHAMPS_REQUIS = [
+  ["company", "la raison sociale"],
+  ["siren", "le SIREN"],
+  ["address", "l'adresse du siège"],
+  ["email", "l'e-mail de contact"],
+  ["mediator", "le médiateur de la consommation"],
+] as const;
+
+const manquants = CHAMPS_REQUIS.filter(([k]) => !L[k].trim()).map(([, label]) => label);
 
 /** Hébergeur du site : GitHub Pages. À changer si tu déménages le site. */
 const HEBERGEUR =
@@ -214,12 +224,11 @@ export default async function LegalPage({ params }: { params: Promise<{ slug: st
       <PageHeader eyebrow="Informations" title={page.title} text={page.intro} />
       <section className="section bg-white">
         <div className="shell max-w-[760px]">
-          {incomplet ? (
+          {manquants.length ? (
             <div className="mb-8 rounded-2xl border border-berry/25 bg-berry-soft px-5 py-4 text-[14px] leading-relaxed text-berry-deep">
-              ⚠️ <strong>Identité légale incomplète.</strong> Renseigne la raison sociale, le SIREN,
-              l&apos;adresse et l&apos;e-mail de contact dans <code>src/data/site.ts</code> avant
-              d&apos;accepter la moindre commande. Ces mentions sont obligatoires en vente à
-              distance, et cet encadré disparaîtra une fois les champs remplis.
+              ⚠️ <strong>Mentions obligatoires incomplètes.</strong> Il manque encore{" "}
+              {manquants.join(", ")}. Complète <code>src/data/site.ts</code> : ces informations sont
+              exigées en vente à distance, et cet encadré disparaîtra une fois les champs remplis.
             </div>
           ) : null}
 
