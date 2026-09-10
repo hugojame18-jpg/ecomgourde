@@ -31,6 +31,22 @@ const CHAMPS_REQUIS = [
 
 const manquants = CHAMPS_REQUIS.filter(([k]) => !L[k].trim()).map(([, label]) => label);
 
+/**
+ * Le rappel s'adresse au développeur, pas à l'acheteur : il ne s'affiche
+ * qu'en local. En production, les phrases concernées restent lisibles sans
+ * laisser traîner un « [à compléter] » sous les yeux d'un client.
+ */
+const alerteVisible = manquants.length > 0 && process.env.NODE_ENV !== "production";
+
+/**
+ * Article L616-1 : l'adhésion à un médiateur de la consommation est
+ * obligatoire. Tant qu'elle n'est pas faite, on renvoie vers la plateforme
+ * européenne, qui elle existe déjà, plutôt que d'afficher un trou.
+ */
+const mediation = L.mediator.trim()
+  ? `En cas de litige non résolu, tu peux recourir gratuitement au médiateur de la consommation dont nous relevons : ${L.mediator}.`
+  : "En cas de litige non résolu, tu peux recourir gratuitement à un médiateur de la consommation. Écris-nous d'abord : nous te communiquons les coordonnées du médiateur dont nous relevons sous 48 heures ouvrées.";
+
 /** Hébergeur du site : GitHub Pages. À changer si tu déménages le site. */
 const HEBERGEUR =
   "GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — https://github.com";
@@ -137,7 +153,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
         h: "8. Réclamations et médiation",
         p: [
           `Toute réclamation doit être adressée à ${manque(L.email)}. Nous répondons sous 48 heures ouvrées.`,
-          `En cas de litige non résolu, tu peux recourir gratuitement au médiateur de la consommation dont nous relevons : ${manque(L.mediator)}.`,
+          mediation,
           "La plateforme européenne de règlement en ligne des litiges est également accessible à l'adresse https://ec.europa.eu/consumers/odr.",
         ],
       },
@@ -224,7 +240,7 @@ export default async function LegalPage({ params }: { params: Promise<{ slug: st
       <PageHeader eyebrow="Informations" title={page.title} text={page.intro} />
       <section className="section bg-white">
         <div className="shell max-w-[760px]">
-          {manquants.length ? (
+          {alerteVisible ? (
             <div className="mb-8 rounded-2xl border border-berry/25 bg-berry-soft px-5 py-4 text-[14px] leading-relaxed text-berry-deep">
               ⚠️ <strong>Mentions obligatoires incomplètes.</strong> Il manque encore{" "}
               {manquants.join(", ")}. Complète <code>src/data/site.ts</code> : ces informations sont
