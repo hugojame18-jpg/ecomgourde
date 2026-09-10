@@ -17,8 +17,10 @@ export function NewsletterForm({ tone = "light" }: { tone?: "light" | "dark" }) 
           tone === "dark" ? "bg-brand/15 text-brand" : "bg-brand-soft text-brand-dark",
         )}
       >
-        Merci ! Ton code <span className="font-bold">{site.newsletterCode}</span> t&apos;attend dans
-        ta boîte mail.
+        Merci ! Voici ton code :{" "}
+        <span className="font-bold tracking-[0.06em]">{site.newsletterCode}</span>
+        <br />
+        <span className="opacity-80">À coller au moment du paiement.</span>
       </div>
     );
   }

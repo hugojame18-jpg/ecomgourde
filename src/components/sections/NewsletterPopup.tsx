@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NewsletterForm } from "./NewsletterForm";
-import { ProductVisual } from "@/components/visuals/ProductVisual";
+import Image from "next/image";
+import { asset } from "@/lib/asset";
 import { site } from "@/data/site";
 
 const KEY = "sugar.newsletter.seen";
@@ -79,9 +80,25 @@ export function NewsletterPopup() {
               </svg>
             </button>
 
-            <div className="relative h-32 overflow-hidden bg-brand-soft">
-              <div className="absolute -bottom-6 left-1/2 h-44 w-44 -translate-x-1/2">
-                <ProductVisual kind="bundle" color="#00c9b6" count={3} />
+            {/* Les trois gourdes, comme sur l'accueil : on reconnaît le produit
+                avant même de lire. */}
+            <div
+              className="relative h-[168px] overflow-hidden"
+              style={{ background: "linear-gradient(170deg, #efe7fb 0%, #fdeef3 100%)" }}
+            >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-[-40%] h-[240px] w-[380px] -translate-x-1/2 rounded-full opacity-70 blur-[60px]"
+                style={{ background: "radial-gradient(circle, #d9c7f7 0%, transparent 70%)" }}
+              />
+              <div className="absolute inset-x-6 bottom-[-14px] top-4">
+                <Image
+                  src={asset("/produits/hero-trio.png")}
+                  alt="Les trois coloris de la Flow Bottle"
+                  fill
+                  sizes="440px"
+                  className="object-contain object-bottom drop-shadow-[0_16px_24px_rgba(122,40,80,0.18)]"
+                />
               </div>
             </div>
 
@@ -92,9 +109,9 @@ export function NewsletterPopup() {
                 <br />
                 première gorgée
               </h2>
-              <p className="mx-auto mt-2 max-w-[34ch] text-[14px] text-ink-600">
-                Rejoins les {site.stats.customers} personnes qui boivent plus d&apos;eau depuis
-                qu&apos;elles ont trouvé leur goût.
+              <p className="mx-auto mt-2 max-w-[32ch] text-[14px] leading-snug text-ink-600">
+                Ton code apparaît tout de suite, à utiliser au moment de payer. Un e-mail par mois,
+                pas plus.
               </p>
               <div className="mt-4">
                 <NewsletterForm />
