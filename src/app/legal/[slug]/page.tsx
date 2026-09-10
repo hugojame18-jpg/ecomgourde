@@ -110,7 +110,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
         h: "6. Droit de rétractation",
         p: [
           "Tu disposes d'un délai de 14 jours à compter de la réception pour te rétracter, sans avoir à te justifier. Nous étendons ce délai à 30 jours à titre commercial.",
-          `Pour l'exercer, il suffit de nous écrire à ${manque(L.email)} avant l'expiration du délai. Le produit doit être renvoyé complet, dans un état permettant sa remise en vente. Les frais de retour sont à notre charge : nous t'envoyons une étiquette prépayée.`,
+          `Pour l'exercer, il suffit de nous écrire à ${manque(L.email)} avant l'expiration du délai. Le produit doit être renvoyé complet, dans un état permettant sa remise en vente. Les frais de retour sont à ta charge.`,
           "Le remboursement intervient au plus tard 14 jours après réception du retour, par le même moyen de paiement que celui utilisé lors de l'achat.",
           "Pour des raisons d'hygiène, les pods descellés ou utilisés ne peuvent être repris.",
         ],

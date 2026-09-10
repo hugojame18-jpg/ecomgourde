@@ -16,8 +16,17 @@ import { getProduct } from "@/data/products";
 const upsellSlugs: string[] = [];
 
 export function CartDrawer() {
-  const { isOpen, closeCart, lines, subtotal, shipping, total, freeShippingLeft, shippingUnlockedByProduct, add } =
-    useCart();
+  const {
+    isOpen,
+    closeCart,
+    lines,
+    subtotal,
+    shipping,
+    total,
+    freeShippingLeft,
+    shippingUnlockedByProduct,
+    add,
+  } = useCart();
 
   const inCart = new Set(lines.map((l) => l.productId));
   const upsells = upsellSlugs
@@ -49,9 +58,7 @@ export function CartDrawer() {
             <header className="flex items-center justify-between border-b border-ink/8 px-5 py-4">
               <h2 className="font-display text-[20px] font-bold tracking-[-0.03em]">
                 Ton panier{" "}
-                <span className="text-ink-400">
-                  ({lines.reduce((s, l) => s + l.quantity, 0)})
-                </span>
+                <span className="text-ink-400">({lines.reduce((s, l) => s + l.quantity, 0)})</span>
               </h2>
               <button
                 type="button"
@@ -89,7 +96,11 @@ export function CartDrawer() {
                       Commence par le Starter Pack, c&apos;est le plus choisi.
                     </p>
                   </div>
-                  <ButtonLink href="/produit/sugar-bottle-7-pods" variant="brand" onClick={closeCart}>
+                  <ButtonLink
+                    href="/produit/sugar-bottle-7-pods"
+                    variant="brand"
+                    onClick={closeCart}
+                  >
                     Voir l'offre 7 pods
                   </ButtonLink>
                 </div>
@@ -124,7 +135,10 @@ export function CartDrawer() {
                       >
                         <div
                           className="relative h-14 w-14 shrink-0 rounded-xl"
-                          style={{ background: p!.visual.kind === "pod" ? "#ffffff" : `${p!.visual.color}16` }}
+                          style={{
+                            background:
+                              p!.visual.kind === "pod" ? "#ffffff" : `${p!.visual.color}16`,
+                          }}
                         >
                           <div className="absolute inset-1.5">
                             <ProductMedia
@@ -187,7 +201,7 @@ export function CartDrawer() {
                   </ButtonLink>
                 </div>
                 <p className="mt-3 text-center text-[12px] text-ink-400">
-                  Retours gratuits sous 30 jours
+                  30 jours pour changer d&apos;avis
                 </p>
               </footer>
             ) : null}
@@ -245,7 +259,9 @@ function CartLineRow({ lineKey }: { lineKey: string }) {
             value={line.quantity}
             onChange={(v) => setQuantity(line.key, v)}
           />
-          <span className="text-[15px] font-semibold">{formatPrice(line.price * line.quantity)}</span>
+          <span className="text-[15px] font-semibold">
+            {formatPrice(line.price * line.quantity)}
+          </span>
         </div>
       </div>
     </div>

@@ -254,7 +254,7 @@ export function ProductDetail({ product }: { product: Product }) {
 
           {/* Réassurance */}
           <ul className="mt-7 flex flex-col gap-2 border-t border-ink/10 pt-5 text-[13.5px] text-ink-600">
-            <li>↩️ 30 jours pour changer d&apos;avis, retour gratuit</li>
+            <li>↩️ 30 jours pour changer d&apos;avis (frais de renvoi à ta charge)</li>
             <li>🔒 Paiement sécurisé — CB, Apple Pay, PayPal</li>
           </ul>
         </div>

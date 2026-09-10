@@ -25,7 +25,7 @@ const shipping = [
   },
   {
     q: "Comment retourner un produit ?",
-    a: "Tu as 30 jours pour changer d'avis. Un e-mail au service client suffit : on t'envoie une étiquette de retour prépayée.",
+    a: "Tu as 30 jours pour changer d'avis. Un e-mail au service client suffit : on te renvoie l'adresse de retour. Les frais de renvoi sont à ta charge ; dès que le colis nous revient complet, tu es remboursé sous 14 jours.",
   },
   {
     q: "Livrez-vous à l'international ?",
