@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/Button";
+import { asset } from "@/lib/asset";
 
 const claims = [
   { label: "0 sucre", color: "#ff5c8a" },
@@ -65,7 +66,7 @@ export function Hero() {
       >
         <div className="relative w-full flex-1 md:aspect-[1433/1020] md:flex-none">
           <Image
-            src="/produits/hero-trio.png"
+            src={asset("/produits/hero-trio.png")}
             alt="Les Flow Bottle en lilas, noir et bleu ciel"
             fill
             priority

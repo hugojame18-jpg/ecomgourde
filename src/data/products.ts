@@ -1,4 +1,5 @@
 import type { Product } from "@/lib/types";
+import { asset } from "@/lib/asset";
 import { flavors, litresPerPack } from "./flavors";
 
 /**
@@ -16,25 +17,25 @@ const bottleColors = [
     name: "Lilas",
     hex: "#a98ce0",
     accent: "#ece4fa",
-    image: "/produits/bottle-lilas.png",
+    image: asset("/produits/bottle-lilas.png"),
   },
   {
     name: "Noir",
     hex: "#4a4a4e",
     accent: "#f0f0f2",
-    image: "/produits/bottle-noir.png",
+    image: asset("/produits/bottle-noir.png"),
   },
   {
     name: "Rose",
     hex: "#e8b9c0",
     accent: "#f8dfe2",
-    image: "/produits/bottle-rose.png",
+    image: asset("/produits/bottle-rose.png"),
   },
   {
     name: "Bleu ciel",
     hex: "#a9c6e0",
     accent: "#dfe9f5",
-    image: "/produits/bottle-bleu.png",
+    image: asset("/produits/bottle-bleu.png"),
   },
 ].map((c) => {
   const base = c.image.replace(".png", "");

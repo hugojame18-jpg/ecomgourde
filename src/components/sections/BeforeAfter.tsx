@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/ui/Primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 
 const before = [
   { title: "La bouteille en plastique", text: "Rachetée, oubliée, jetée. Encore et encore." },
@@ -80,7 +81,7 @@ export function BeforeAfter() {
               <span className="eyebrow relative text-white/70">Après</span>
               <div className="relative mx-auto my-6 h-44 w-full max-w-[220px]">
                 <Image
-                  src="/produits/bottle-bleu.png"
+                  src={asset("/produits/bottle-bleu.png")}
                   alt="La Flow Bottle en Tritan bleu ciel"
                   fill
                   sizes="220px"

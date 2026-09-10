@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { allProducts } from "@/data/products";
 import { site } from "@/data/site";
 
+/** Générés une fois à la compilation : requis en export statique. */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",

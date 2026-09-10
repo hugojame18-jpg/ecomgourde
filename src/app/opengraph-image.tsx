@@ -6,6 +6,9 @@ export const alt = `${site.name} — ${site.tagline}`;
 export const size = ogTheme.size;
 export const contentType = "image/png";
 
+/** Générée une fois à la compilation : indispensable en export statique. */
+export const dynamic = "force-static";
+
 /** Vignette affichée quand un lien vers l'accueil est partagé (TikTok, Insta, WhatsApp…). */
 export default async function OpenGraphImage() {
   const bottles = await publicImageDataUri("/produits/hero-trio.png");

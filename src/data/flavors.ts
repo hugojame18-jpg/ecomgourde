@@ -1,4 +1,5 @@
 import type { Flavor, Nutrition } from "@/lib/types";
+import { asset } from "@/lib/asset";
 
 /**
  * LA GAMME — 7 arômes de base + 10 arômes vendus à l'unité seulement.
@@ -35,7 +36,7 @@ const FRUIT_IMAGES: Record<string, { file: string; fit: "contain" | "cover" }> =
 };
 
 const fruitPhoto = (id: string) =>
-  FRUIT_IMAGES[id] ? `/produits/fruits/${FRUIT_IMAGES[id].file}` : undefined;
+  FRUIT_IMAGES[id] ? asset(`/produits/fruits/${FRUIT_IMAGES[id].file}`) : undefined;
 
 export const fruitFit = (id: string) => FRUIT_IMAGES[id]?.fit ?? "contain";
 
@@ -44,7 +45,7 @@ const baseFlavors: Flavor[] = [
     id: "fruits-rouges",
     name: "Fruits rouges",
     image: fruitPhoto("fruits-rouges"),
-    podImage: "/produits/pod-fruits-rouges.png",
+    podImage: asset("/produits/pod-fruits-rouges.png"),
     color: "#e0234e",
     soft: "#ffe7ec",
     notes: ["Framboise", "Fraise", "Myrtille"],
@@ -60,7 +61,7 @@ const baseFlavors: Flavor[] = [
     id: "citron",
     name: "Citron",
     image: fruitPhoto("citron"),
-    podImage: "/produits/pod-citron.png",
+    podImage: asset("/produits/pod-citron.png"),
     color: "#e0a800",
     soft: "#fff6d9",
     notes: ["Citron jaune", "Citron vert", "Basilic"],
@@ -76,7 +77,7 @@ const baseFlavors: Flavor[] = [
     id: "orange",
     name: "Orange",
     image: fruitPhoto("orange"),
-    podImage: "/produits/pod-orange.png",
+    podImage: asset("/produits/pod-orange.png"),
     color: "#ff7a18",
     soft: "#ffeeda",
     notes: ["Orange sanguine", "Mangue", "Fleur d'oranger"],
@@ -92,7 +93,7 @@ const baseFlavors: Flavor[] = [
     id: "tropical",
     name: "Tropical",
     image: fruitPhoto("tropical"),
-    podImage: "/produits/pod-tropical.png",
+    podImage: asset("/produits/pod-tropical.png"),
     color: "#f2a007",
     soft: "#fff3d6",
     notes: ["Fruit de la passion", "Mangue", "Pêche"],
@@ -108,7 +109,7 @@ const baseFlavors: Flavor[] = [
     id: "cerise",
     name: "Cerise",
     image: fruitPhoto("cerise"),
-    podImage: "/produits/pod-cerise.png",
+    podImage: asset("/produits/pod-cerise.png"),
     color: "#c8102e",
     soft: "#ffe3e8",
     notes: ["Cerise noire", "Grenade", "Griotte"],
@@ -124,7 +125,7 @@ const baseFlavors: Flavor[] = [
     id: "coco",
     name: "Coco",
     image: fruitPhoto("coco"),
-    podImage: "/produits/pod-coco.png",
+    podImage: asset("/produits/pod-coco.png"),
     color: "#2f9fd0",
     soft: "#dff0fa",
     notes: ["Noix de coco", "Eau de coco", "Vanille"],
@@ -140,7 +141,7 @@ const baseFlavors: Flavor[] = [
     id: "fruits-des-bois",
     name: "Fruits des bois",
     image: fruitPhoto("fruits-des-bois"),
-    podImage: "/produits/pod-fruits-des-bois.png",
+    podImage: asset("/produits/pod-fruits-des-bois.png"),
     color: "#7c4dff",
     soft: "#eee7ff",
     notes: ["Mûre", "Myrtille", "Cassis"],
@@ -164,7 +165,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "banane",
     name: "Banane",
-    podImage: "/produits/pod-banane.png",
+    podImage: asset("/produits/pod-banane.png"),
     color: "#e8b93a",
     soft: "#fdf3d6",
     notes: ["Banane mûre", "Lait d'amande", "Vanille"],
@@ -180,7 +181,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "fruit-du-dragon",
     name: "Fruit du dragon",
-    podImage: "/produits/pod-fruit-du-dragon.png",
+    podImage: asset("/produits/pod-fruit-du-dragon.png"),
     color: "#e8447c",
     soft: "#fde3ec",
     notes: ["Pitaya", "Fruit de la passion", "Litchi"],
@@ -196,7 +197,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "pasteque-menthe",
     name: "Pastèque menthe",
-    podImage: "/produits/pod-pasteque-menthe.png",
+    podImage: asset("/produits/pod-pasteque-menthe.png"),
     color: "#4bb573",
     soft: "#e0f4e6",
     notes: ["Pastèque", "Menthe fraîche", "Citron vert"],
@@ -212,7 +213,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "pomme",
     name: "Pomme",
-    podImage: "/produits/pod-pomme.png",
+    podImage: asset("/produits/pod-pomme.png"),
     color: "#d5566a",
     soft: "#fbe4e7",
     notes: ["Pomme rouge", "Pomme verte", "Fleur de sureau"],
@@ -228,7 +229,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "fraise-pasteque",
     name: "Fraise pastèque",
-    podImage: "/produits/pod-fraise-pasteque.png",
+    podImage: asset("/produits/pod-fraise-pasteque.png"),
     color: "#f0526b",
     soft: "#fde2e6",
     notes: ["Fraise", "Pastèque", "Basilic"],
@@ -244,7 +245,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "cafe",
     name: "Café",
-    podImage: "/produits/pod-cafe.png",
+    podImage: asset("/produits/pod-cafe.png"),
     color: "#8a5a3b",
     soft: "#efe3d8",
     notes: ["Café torréfié", "Crème", "Noisette"],
@@ -260,7 +261,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "punch",
     name: "Punch fruité",
-    podImage: "/produits/pod-punch.png",
+    podImage: asset("/produits/pod-punch.png"),
     color: "#f2762b",
     soft: "#fdeadb",
     notes: ["Multifruits", "Agrumes", "Fruits rouges"],
@@ -276,7 +277,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "ananas",
     name: "Ananas",
-    podImage: "/produits/pod-ananas.png",
+    podImage: asset("/produits/pod-ananas.png"),
     color: "#e2a417",
     soft: "#fdf0cf",
     notes: ["Ananas Victoria", "Citron vert", "Menthe"],
@@ -292,7 +293,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "raisin",
     name: "Raisin blanc",
-    podImage: "/produits/pod-raisin.png",
+    podImage: asset("/produits/pod-raisin.png"),
     color: "#a9c23e",
     soft: "#eef4d6",
     notes: ["Raisin blanc", "Poire", "Fleur de vigne"],
@@ -308,7 +309,7 @@ const soloFlavors: Flavor[] = [
   {
     id: "peche",
     name: "Pêche",
-    podImage: "/produits/pod-peche.png",
+    podImage: asset("/produits/pod-peche.png"),
     color: "#f09a6a",
     soft: "#fdeade",
     notes: ["Pêche de vigne", "Abricot", "Verveine"],
