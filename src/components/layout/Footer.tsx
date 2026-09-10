@@ -9,7 +9,7 @@ const columns = [
     title: "Boutique",
     links: [
       { label: "Gourde + 7 pods", href: "/produit/flow-bottle-7-pods" },
-      { label: "Gourde + 1 pod", href: "/produit/flow-bottle-1-pod" },
+      { label: "La gourde seule", href: "/produit/flow-bottle" },
       { label: "Les goûts", href: "/pods" },
     ],
   },

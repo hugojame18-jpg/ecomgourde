@@ -21,7 +21,7 @@ const BOTTLE_7_PODS: ColorMap = {
   "Bleu ciel": "gid://shopify/ProductVariant/54909256434003",
 };
 
-const BOTTLE_1_POD: ColorMap = {
+const BOTTLE_SEULE: ColorMap = {
   Lilas: "gid://shopify/ProductVariant/54909258694995",
   Noir: "gid://shopify/ProductVariant/54909258727763",
   Rose: "gid://shopify/ProductVariant/54909258760531",
@@ -38,7 +38,7 @@ const PODS: Record<string, string> = {
 
 const BOTTLES: Record<string, ColorMap> = {
   "flow-bottle-7-pods": BOTTLE_7_PODS,
-  "flow-bottle-1-pod": BOTTLE_1_POD,
+  "flow-bottle": BOTTLE_SEULE,
 };
 
 /**

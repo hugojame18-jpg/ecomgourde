@@ -13,7 +13,7 @@ import { formatPrice } from "@/lib/format";
 import { flavorName } from "@/data/flavors";
 import { getProduct, products } from "@/data/products";
 
-const recoSlugs = ["flow-bottle-7-pods", "flow-bottle-1-pod"];
+const recoSlugs = ["flow-bottle-7-pods", "flow-bottle"];
 
 export function CartPageContent() {
   const {

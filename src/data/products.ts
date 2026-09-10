@@ -5,7 +5,7 @@ import { flavors, litresPerPack } from "./flavors";
 /**
  * CATALOGUE
  * Deux offres seulement pour le moment, calquées sur ce qui est réellement
- * approvisionnable : la gourde livrée avec 1 pod, ou avec 7 pods.
+ * approvisionnable : la gourde seule, ou avec les sept arômes.
  *
  * ⚠️ Les goûts sont ALÉATOIRES : le client ne les choisit pas.
  * C'est pour ça qu'aucun produit n'a de `flavorPicks`.
@@ -66,9 +66,9 @@ const allFlavorsFaq = {
   a: "Tu n'as pas à choisir : le pack contient les sept arômes de la gamme, un pod de chaque. Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc sont tous dans la boîte.",
 };
 
-const randomFlavorFaq = {
-  q: "Puis-je choisir mon goût ?",
-  a: "Pas sur cette offre : le pod livré avec la gourde est tiré au hasard dans la gamme. Si tu veux les sept arômes, prends le pack complet.",
+const sansPodFaq = {
+  q: "Des pods sont-ils inclus ?",
+  a: "Non, cette offre ne contient que la gourde et sa dragonne. Le pack « gourde + 7 pods » contient un pod de chacun des sept arômes, pour 8,55 € de plus.",
 };
 
 const bottleFaq = (flavorFaq: { q: string; a: string }) => [
@@ -88,35 +88,34 @@ const bottleFaq = (flavorFaq: { q: string; a: string }) => [
 ];
 
 export const products: Product[] = [
-  /* ---------- OFFRE DE BASE : gourde + 1 pod ---------- */
+  /* ---------- OFFRE DE BASE : la gourde seule ---------- */
   {
-    id: "flow-bottle-1-pod",
-    slug: "flow-bottle-1-pod",
-    name: "Flow Bottle + 1 pod",
-    tagline: "Gourde 650 ml + 1 pod surprise",
+    id: "flow-bottle",
+    slug: "flow-bottle",
+    name: "Flow Bottle",
+    tagline: "Gourde 650 ml en Tritan, sans pod",
     category: "bundle",
     freeShipping: true,
     price: 24.9,
     rating: 4.8,
     reviewCount: 1284,
-    savingsLabel: "L'essentiel pour tester",
-    subtitleParts: ["650 ml", "Tritan", "1 pod inclus"],
-    pods: { count: 1, pick: "random" },
+    savingsLabel: "La gourde seule",
+    subtitleParts: ["650 ml", "Tritan", "sans pod"],
     features: bottleFeatures,
     shortDescription:
-      "La gourde Tritan translucide livrée avec un pod aromatique surprise. Le goût est tiré au hasard dans la gamme — c'est la façon la plus simple de découvrir l'expérience.",
+      "La gourde Tritan translucide, seule. Pour qui a déjà des pods, ou veut une deuxième gourde à la maison.",
     description: [
       "La Flow Bottle a été dessinée autour d'une idée simple : rendre l'eau assez agréable pour qu'on la boive sans y penser.",
       "Le corps translucide en Tritan laisse voir exactement ce qu'il te reste à boire. Le bouchon accueille un pod aromatique : l'air passe par le pod avant d'arriver en bouche, et le cerveau perçoit le goût. Zéro sucre, zéro calorie, zéro arôme dans l'eau.",
-      "Le pod inclus est envoyé au hasard parmi les arômes de la gamme. Tu ne choisis pas ton goût — tu le découvres.",
+      "Cette offre ne contient aucun pod. Si c'est ta première gourde, prends plutôt le pack avec les sept arômes : tu ne paieras que 8,55 € de plus.",
     ],
     images: bottleColors[1].gallery,
     visual: { kind: "bottle", color: "#a98ce0", accent: "#ece4fa" },
     colors: bottleColors,
     bullets: [
       {
-        title: "1 pod surprise inclus",
-        text: "Goût tiré au hasard dans la gamme, impossible à choisir.",
+        title: "Sans pod",
+        text: "La gourde seule, pour compléter ou remplacer.",
       },
       {
         title: "Tu vois ce qu'il te reste",
@@ -133,12 +132,11 @@ export const products: Product[] = [
     ],
     includes: [
       "1 Flow Bottle 650 ml (coloris au choix)",
-      "1 pod aromatique — goût tiré au hasard parmi les 7 arômes de la gamme",
       "1 dragonne",
       "Livraison offerte",
     ],
-    specs: [...bottleSpecs, { label: "Pods inclus", value: "1, goût aléatoire" }],
-    faq: bottleFaq(randomFlavorFaq),
+    specs: [...bottleSpecs, { label: "Pods inclus", value: "aucun" }],
+    faq: bottleFaq(sansPodFaq),
   },
 
   /* ---------- OFFRE PRINCIPALE : gourde + 7 pods ---------- */

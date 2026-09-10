@@ -21,7 +21,7 @@ export function Shop() {
                 Aucune prise de tête.
               </>
             }
-            text="La même gourde, livrée avec 1 pod surprise pour tester, ou avec les sept arômes de la gamme."
+            text="La même gourde, seule ou accompagnée des sept arômes de la gamme."
           />
           <Link
             href="/gourdes"

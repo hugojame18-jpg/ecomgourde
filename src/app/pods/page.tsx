@@ -33,7 +33,7 @@ export default function FlavorsPage() {
           <SectionHeading
             eyebrow="Pas encore de gourde ?"
             title="Commence par un pack."
-            text="Le pack gourde + 7 pods contient les sept arômes de base, un pod de chaque. Le pack gourde + 1 pod en tire un au hasard."
+            text="Le pack gourde + 7 pods contient les sept arômes, un pod de chaque."
           />
           <div className="mt-8 md:mt-12">
             <ProductGrid products={products} cols={3} />
