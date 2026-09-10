@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* =========================================================
+   DESIGN SYSTEM — SUGAR
+   Toutes les valeurs de marque (couleurs, radius, ombres,
+   typo, spacing) sont centralisées ici.
+   ========================================================= */
+@theme {
+  /* ---- Couleurs de marque ---- */
+  --color-ink: #0a0d0c;
+  --color-ink-800: #141a18;
+  --color-ink-600: #2b3532;
+  --color-ink-400: #6c7674;
+  --color-mist: #f4f6f5;
+  /* Base chaude : remplace le blanc pur, comme les DTC premium */
+  --color-cream: #f8f6f2;
+  /* Couleurs de sections — utilisées à la place du noir */
+  --color-berry: #a8305c;
+  --color-berry-deep: #7d1f42;
+  --color-berry-soft: #fdeef3;
+  --color-lilac: #a98ce0;
+  --color-lilac-soft: #efe7fb;
+  --color-line: #e6e9e8;
+
+  /* Teintes 'jus de fruit' — fonds de sections et halos, plus gourmands
+     que les pastels d'origine qui rendaient l'accueil trop sage. */
+  --color-punch: #ff5c8a;
+  --color-punch-soft: #ffdfe9;
+  --color-mango: #ffab3d;
+  --color-mango-soft: #ffeed6;
+  --color-melon: #ff7a92;
+  --color-grape: #b98cff;
+  --color-grape-soft: #ece0ff;
+
+  /* Couleur principale (à remplacer par la vraie couleur de marque) */
+  --color-brand: #00c9b6;
+  --color-brand-dark: #00a394;
+  --color-brand-soft: #d9fbf6;
+  --color-brand-glow: #6bf5e3;
+
+  /* ---- Accents pods (1 couleur par goût) ---- */
+  --color-pod-red: #e0234e;
+  --color-pod-lemon: #f2c230;
+  --color-pod-orange: #ff7a18;
+  --color-pod-mint: #2ed3a0;
+  --color-pod-tropical: #7c4dff;
+  --color-pod-peach: #ff8f6b;
+  --color-pod-melon: #ff4d6d;
+
+  /* ---- Typographie ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-inter), ui-sans-serif, sans-serif;
+
+  /* ---- Radius ---- */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* ---- Ombres ---- */
+  --shadow-card: 0 2px 4px rgba(10, 13, 12, 0.03), 0 12px 32px -12px rgba(10, 13, 12, 0.12);
+  --shadow-hover: 0 4px 8px rgba(10, 13, 12, 0.04), 0 24px 48px -16px rgba(10, 13, 12, 0.18);
+  --shadow-pop: 0 24px 60px -18px rgba(10, 13, 12, 0.35);
+
+  /* ---- Easing / durations ---- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --header-h: 60px;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 24px);
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  button, a { -webkit-tap-highlight-color: transparent; }
+
+  /* Scrollbars horizontales des carrousels */
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Conteneur global */
+  .shell {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 1240px;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) { .shell { padding-inline: 32px; } }
+
+  /* Rythme vertical des sections */
+  .section {
+    padding-block: 72px;
+  }
+  @media (min-width: 768px) { .section { padding-block: 120px; } }
+
+  /* Étiquette / eyebrow */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  /* Grain léger pour éviter l'effet "aplat plastique" */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+}
+
+/* Défilement infini (marquee) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 32s linear infinite; }
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+}
+.animate-float { animation: float-soft 6s var(--ease-out-soft) infinite; }

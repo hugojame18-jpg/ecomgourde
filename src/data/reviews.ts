@@ -1,0 +1,106 @@
+import type { Review } from "@/lib/types";
+
+/**
+ * ⚠️ Contenu de démonstration — avis fictifs créés pour la maquette.
+ * Remplace-les par tes vrais avis (Judge.me, Loox, Trustpilot...) avant mise en ligne.
+ */
+export const reviews: Review[] = [
+  {
+    id: "r1",
+    name: "Camille",
+    initial: "C",
+    rating: 5,
+    title: "Je bois enfin assez d'eau",
+    text: "Depuis que je l'ai, je bois beaucoup plus facilement pendant mes journées. Je finis deux gourdes avant 16 h alors qu'avant j'oubliais complètement.",
+    product: "Starter Pack · Fruits rouges",
+    verified: true,
+    color: "#e0234e",
+  },
+  {
+    id: "r2",
+    name: "Yanis",
+    initial: "Y",
+    rating: 5,
+    title: "Le tropical est bluffant",
+    text: "On a vraiment le goût alors qu'il n'y a rien dans l'eau. Mes collègues ont tous voulu tester, trois l'ont commandée dans la semaine.",
+    product: "Flow Bottle Noir · Tropical",
+    verified: true,
+    color: "#7c4dff",
+  },
+  {
+    id: "r3",
+    name: "Léa",
+    initial: "L",
+    rating: 5,
+    title: "Finies les canettes",
+    text: "J'achetais deux sodas par jour au bureau. Depuis un mois : zéro. Et voir le niveau baisser dans la gourde, ça motive bizarrement.",
+    product: "Discovery Pack",
+    verified: true,
+    color: "#7c4dff",
+  },
+  {
+    id: "r4",
+    name: "Thomas",
+    initial: "T",
+    rating: 4,
+    title: "Très bonne qualité de fabrication",
+    text: "Le plastique est épais et ne marque pas, le clip du bouchon tient parfaitement, aucune fuite dans mon sac de sport. J'aurais aimé une version 1 L.",
+    product: "Flow Bottle Lilas",
+    verified: true,
+    color: "#a98ce0",
+  },
+  {
+    id: "r5",
+    name: "Sarah",
+    initial: "S",
+    rating: 5,
+    title: "Le changement de pod est instantané",
+    text: "Citron le matin, tropical l'après-midi. Deux secondes pour changer, aucun goût qui reste d'un pod à l'autre.",
+    product: "Pod Pack",
+    verified: true,
+    color: "#f2c230",
+  },
+  {
+    id: "r6",
+    name: "Noah",
+    initial: "N",
+    rating: 5,
+    title: "Cadeau parfait",
+    text: "Offert à ma sœur pour son anniversaire, elle ne s'en sépare plus. Le coffret est vraiment beau, rien à remballer.",
+    product: "Discovery Pack",
+    verified: true,
+    color: "#ff7a18",
+  },
+  {
+    id: "r7",
+    name: "Inès",
+    initial: "I",
+    rating: 5,
+    title: "Aucun sucre et pourtant gourmand",
+    text: "Je cherchais une alternative aux boissons sucrées pendant ma grossesse. L'orange est douce et parfaitement dosée.",
+    product: "Pod Orange",
+    verified: true,
+    color: "#ff7a18",
+  },
+  {
+    id: "r8",
+    name: "Marc",
+    initial: "M",
+    rating: 5,
+    title: "Abonnement bien pensé",
+    text: "Je reçois mes pods tous les mois sans y penser, et j'ai décalé une livraison pendant les vacances en deux clics.",
+    product: "Abonnement Duo",
+    verified: true,
+    color: "#00c9b6",
+  },
+];
+
+/** Cartes verticales façon TikTok / Reels — remplace `video` par un vrai fichier .mp4 */
+export const ugcPosts = [
+  { id: "u1", handle: "@camille.hyd", caption: "3 semaines sans soda, honnêtement je ne reviens pas en arrière", likes: "48,2k", color: "#e0234e", video: "", poster: "" },
+  { id: "u2", handle: "@yanisfit", caption: "Ma routine hydratation avant la séance 💧", likes: "127k", color: "#2ed3a0", video: "", poster: "" },
+  { id: "u3", handle: "@lea.studies", caption: "POV : tu as enfin trouvé comment boire 2 L par jour", likes: "319k", color: "#7c4dff", video: "", poster: "" },
+  { id: "u4", handle: "@thomas.eats", caption: "Le test du goût les yeux bandés avec ma coloc", likes: "86,5k", color: "#ff7a18", video: "", poster: "" },
+  { id: "u5", handle: "@sarah.daily", caption: "Unboxing du Discovery Pack, le coloris lilas 💜", likes: "54,1k", color: "#a98ce0", video: "", poster: "" },
+  { id: "u6", handle: "@noahruns", caption: "Citron + eau glacée après 10 km = parfait", likes: "72,9k", color: "#f2c230", video: "", poster: "" },
+];
