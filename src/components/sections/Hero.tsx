@@ -13,7 +13,10 @@ const claims = [
   { label: "Tritan sans BPA", color: "#00c9b6" },
   { label: "7 goûts", color: "#ff5c8a" },
   { label: "Sans engagement", color: "#ffab3d" },
-  { label: "Fabriqué en Europe", color: "#b98cff" },
+  // Surtout pas de mention d'origine ici : le produit est fabriqué en Asie.
+  // Annoncer une origine fausse est une pratique commerciale trompeuse
+  // (art. L121-2 du Code de la consommation).
+  { label: "650 ml", color: "#b98cff" },
   { label: "Livraison offerte", color: "#00c9b6" },
 ];
 

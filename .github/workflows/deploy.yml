@@ -23,13 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EXPORT: "1"
-      # Le site vit sous /ecomgourde/ tant qu'aucun domaine n'est branché.
-      # Le jour où tu connectes ton domaine : vider BASE_PATH et mettre
-      # l'adresse réelle dans NEXT_PUBLIC_SITE_URL.
-      BASE_PATH: /ecomgourde
-      # Même valeur : sert à préfixer les images de /public.
-      NEXT_PUBLIC_BASE_PATH: /ecomgourde
-      NEXT_PUBLIC_SITE_URL: https://hugojame18-jpg.github.io/ecomgourde
+      # Le site est servi à la racine de sugar-arome.site : aucun préfixe.
+      # Ces deux variables ne servent que si le site retourne sur une URL de
+      # la forme user.github.io/depot — sinon elles doivent rester vides.
+      BASE_PATH: ''
+      NEXT_PUBLIC_BASE_PATH: ''
+      NEXT_PUBLIC_SITE_URL: https://sugar-arome.site
       NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN: jdwqx1-bw.myshopify.com
     steps:
       - uses: actions/checkout@v4
