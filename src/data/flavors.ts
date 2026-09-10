@@ -14,7 +14,7 @@ import { asset } from "@/lib/asset";
 /**
  * PHOTOS DE FRUITS — fichiers locaux dans /public/produits/fruits/.
  * Tous détourés sur fond transparent : ils flottent sur la couleur de la carte.
- * Cola et Énergie n'y figurent pas : leur carte montre le pod.
+ * Énergie n'y figure pas : sa seule photo était une canette de marque.
  */
 const FRUIT_IMAGES: Record<string, { file: string; fit: "contain" | "cover" }> = {
   orange: { file: "orange.png", fit: "contain" },
@@ -22,6 +22,7 @@ const FRUIT_IMAGES: Record<string, { file: string; fit: "contain" | "cover" }> =
   ananas: { file: "ananas.png", fit: "contain" },
   peche: { file: "peche.png", fit: "contain" },
   raisin: { file: "raisin.png", fit: "contain" },
+  cola: { file: "cola.png", fit: "contain" },
 };
 
 const fruitPhoto = (id: string) =>
@@ -98,7 +99,7 @@ const baseFlavors: Flavor[] = [
   {
     id: "cola",
     name: "Cola",
-    // Pas de photo de fruit non plus : le pod fait le visuel.
+    image: fruitPhoto("cola"),
     podImage: asset("/produits/pod-cola.png"),
     color: "#8a4b2a",
     soft: "#f0e0d6",
