@@ -12,10 +12,20 @@ import { grantFirstOrderDiscount } from "@/lib/newsletter";
  * et s'applique toute seule au paiement (voir `lib/newsletter`). Le code reste
  * affiché pour qui commande depuis un autre appareil.
  *
- * ⚠️ L'adresse n'est encore envoyée nulle part. Branche ton outil d'envoi
- * (Shopify Email, Brevo, Klaviyo) dans `onSubmit` : tant que ce n'est pas fait,
- * tu offres 10 % sans récupérer le contact, et la ligne de consentement
- * ci-dessous devra mentionner ton prestataire.
+ * ⚠️ L'adresse n'est encore envoyée nulle part, et le site étant statique elle
+ * ne peut pas l'être depuis ici : Shopify refuse les envois vers /contact
+ * depuis un autre domaine, et l'API Admin exige un jeton qu'on ne peut pas
+ * exposer dans un navigateur — il donnerait à n'importe qui les pleins droits
+ * sur la boutique.
+ *
+ * Deux façons de brancher un vrai envoi dans `onSubmit` :
+ *   1. un formulaire hébergé par un prestataire d'e-mailing (Brevo, Klaviyo,
+ *      Mailchimp), qui accepte les envois inter-domaines ;
+ *   2. une petite fonction serveur (Cloudflare Workers, gratuit) qui reçoit
+ *      l'adresse et appelle l'API Admin de Shopify avec le jeton côté serveur.
+ *
+ * Tant que ce n'est pas fait, la remise de 10 % est offerte sans récupérer le
+ * contact. La ligne de consentement ci-dessous devra nommer le prestataire.
  */
 export function NewsletterForm({ tone = "light" }: { tone?: "light" | "dark" }) {
   const [email, setEmail] = useState("");

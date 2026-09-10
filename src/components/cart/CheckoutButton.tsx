@@ -33,7 +33,7 @@ export function CheckoutButton({
   const go = () => {
     setError(null);
     try {
-      const url = buildCheckoutUrl(lines, discount ?? undefined);
+      const url = buildCheckoutUrl(lines, { discountCode: discount ?? undefined });
       onNavigate?.();
       window.location.href = url;
     } catch (e) {
