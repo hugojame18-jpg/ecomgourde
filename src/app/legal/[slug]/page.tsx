@@ -129,7 +129,7 @@ const pages: Record<string, { title: string; intro: string; blocks: Bloc[] }> = 
         h: "4. Commande et paiement",
         p: [
           "La commande est ferme dès la validation du paiement. Un e-mail de confirmation récapitulant la commande est envoyé à l'adresse indiquée.",
-          "Le paiement s'effectue sur une page sécurisée opérée par Shopify Payments : carte bancaire, Apple Pay, Shop Pay. Aucune donnée bancaire ne transite ni n'est conservée par nos soins.",
+          "Le paiement s'effectue sur une page sécurisée opérée par Shopify Payments : carte bancaire, PayPal, Klarna. Aucune donnée bancaire ne transite ni n'est conservée par nos soins.",
           "Nous nous réservons le droit d'annuler toute commande présentant un motif sérieux de suspicion de fraude, avec remboursement intégral.",
         ],
       },

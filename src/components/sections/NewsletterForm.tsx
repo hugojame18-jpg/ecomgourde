@@ -3,8 +3,20 @@
 import { useState } from "react";
 import { site } from "@/data/site";
 import { cx } from "@/lib/format";
+import { grantFirstOrderDiscount } from "@/lib/newsletter";
 
-/** Branche ici ton provider (Klaviyo, Brevo, Shopify...) dans `onSubmit`. */
+/**
+ * −10 % contre une adresse e-mail.
+ *
+ * La remise est acquise immédiatement : elle est mémorisée dans le navigateur
+ * et s'applique toute seule au paiement (voir `lib/newsletter`). Le code reste
+ * affiché pour qui commande depuis un autre appareil.
+ *
+ * ⚠️ L'adresse n'est encore envoyée nulle part. Branche ton outil d'envoi
+ * (Shopify Email, Brevo, Klaviyo) dans `onSubmit` : tant que ce n'est pas fait,
+ * tu offres 10 % sans récupérer le contact, et la ligne de consentement
+ * ci-dessous devra mentionner ton prestataire.
+ */
 export function NewsletterForm({ tone = "light" }: { tone?: "light" | "dark" }) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
@@ -17,10 +29,13 @@ export function NewsletterForm({ tone = "light" }: { tone?: "light" | "dark" }) 
           tone === "dark" ? "bg-brand/15 text-brand" : "bg-brand-soft text-brand-dark",
         )}
       >
-        Merci ! Voici ton code :{" "}
-        <span className="font-bold tracking-[0.06em]">{site.newsletterCode}</span>
+        C&apos;est fait, tes −{site.firstOrderDiscount} % sont enregistrés : ils s&apos;appliquent
+        tout seuls au moment de payer.
         <br />
-        <span className="opacity-80">À coller au moment du paiement.</span>
+        <span className="opacity-80">
+          Sur un autre appareil, utilise le code{" "}
+          <span className="font-bold tracking-[0.06em]">{site.newsletterCode}</span>.
+        </span>
       </div>
     );
   }
@@ -29,7 +44,9 @@ export function NewsletterForm({ tone = "light" }: { tone?: "light" | "dark" }) 
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (email.includes("@")) setSent(true);
+        if (!email.includes("@")) return;
+        grantFirstOrderDiscount();
+        setSent(true);
       }}
       className={cx(
         "flex items-center gap-1 rounded-full p-1.5",
@@ -55,5 +72,18 @@ export function NewsletterForm({ tone = "light" }: { tone?: "light" | "dark" }) 
         Recevoir −{site.firstOrderDiscount} %
       </button>
     </form>
+  );
+}
+
+/**
+ * Mention de consentement, à placer sous le formulaire. Obligatoire dès qu'une
+ * adresse est collectée à des fins commerciales (RGPD, art. 6.1.a).
+ */
+export function NewsletterConsent({ tone = "light" }: { tone?: "light" | "dark" }) {
+  return (
+    <p className={cx("mt-2 text-[11.5px]", tone === "dark" ? "text-white/45" : "text-ink-400")}>
+      Une remise valable sur ta première commande. Deux à trois e-mails par mois, désinscription en
+      un clic.
+    </p>
   );
 }

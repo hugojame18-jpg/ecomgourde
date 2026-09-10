@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { useCart } from "@/components/cart/CartProvider";
 import { buildCheckoutUrl, CheckoutError } from "@/lib/shopify";
+import { hasFirstOrderDiscount } from "@/lib/newsletter";
+import { site } from "@/data/site";
 
 /**
  * Passe la main à Shopify : construit le lien panier puis redirige vers la page
@@ -21,10 +23,17 @@ export function CheckoutButton({
   const { lines } = useCart();
   const [error, setError] = useState<string | null>(null);
 
+  // Le stockage du navigateur n'existe pas au rendu serveur : on le lit après
+  // affichage, sinon le HTML généré et la page affichée divergent.
+  const [discount, setDiscount] = useState<string | null>(null);
+  useEffect(() => {
+    if (hasFirstOrderDiscount()) setDiscount(site.newsletterCode);
+  }, []);
+
   const go = () => {
     setError(null);
     try {
-      const url = buildCheckoutUrl(lines);
+      const url = buildCheckoutUrl(lines, discount ?? undefined);
       onNavigate?.();
       window.location.href = url;
     } catch (e) {
@@ -48,8 +57,14 @@ export function CheckoutButton({
         </p>
       ) : null}
 
+      {discount ? (
+        <p className="mt-2 text-center text-[12.5px] font-medium text-berry">
+          −{site.firstOrderDiscount} % appliqués automatiquement au paiement
+        </p>
+      ) : null}
+
       <p className="mt-2 text-center text-[12px] leading-snug text-ink-400">
-        Paiement sécurisé sur Shopify · CB, Apple Pay, PayPal
+        Paiement sécurisé sur Shopify · CB, PayPal, Klarna
       </p>
     </div>
   );

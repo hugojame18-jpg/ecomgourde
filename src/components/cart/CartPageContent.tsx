@@ -49,8 +49,7 @@ export function CartPageContent() {
             Ton panier est vide
           </h1>
           <p className="mx-auto mt-2 max-w-[42ch] text-[15px] text-ink-600">
-            La gourde livrée avec les 7 arômes de la gamme, livraison offerte. C&apos;est l&apos;offre que
-            prennent neuf clients sur dix.
+            La gourde livrée avec les 7 arômes de la gamme, livraison offerte.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -98,7 +97,10 @@ export function CartPageContent() {
                     <Link
                       href={`/produit/${line.slug}`}
                       className="relative h-28 w-24 shrink-0 overflow-hidden rounded-2xl md:h-32 md:w-28"
-                      style={{ background: line.visual.kind === "pod" ? "#ffffff" : `${line.visual.color}16` }}
+                      style={{
+                        background:
+                          line.visual.kind === "pod" ? "#ffffff" : `${line.visual.color}16`,
+                      }}
                     >
                       <div className="absolute inset-2.5">
                         <ProductMedia
@@ -123,9 +125,7 @@ export function CartPageContent() {
                             {[
                               line.variant,
                               line.subscription ? "Abonnement" : null,
-                              line.flavors?.length
-                                ? line.flavors.map(flavorName).join(", ")
-                                : null,
+                              line.flavors?.length ? line.flavors.map(flavorName).join(", ") : null,
                             ]
                               .filter(Boolean)
                               .join(" · ")}
@@ -184,13 +184,15 @@ export function CartPageContent() {
                 <dt>Total</dt>
                 <dd>{formatPrice(total)}</dd>
               </div>
-              <p className="text-[12px] text-ink-400">TVA incluse</p>
+              {/* Franchise en base : aucune TVA n'est facturée, donc rien à
+                  « inclure ». Annoncer une TVA inexistante est faux. */}
+              <p className="text-[12px] text-ink-400">TVA non applicable, art. 293 B du CGI</p>
             </dl>
 
             <CheckoutButton className="mt-5" />
 
             <ul className="mt-5 flex flex-col gap-2 text-[13px] text-ink-600">
-              <li>🔒 Paiement sécurisé — CB, Apple Pay, PayPal</li>
+              <li>🔒 Paiement sécurisé — CB, PayPal, Klarna</li>
               <li>↩️ 30 jours pour changer d&apos;avis</li>
               <li>📦 Livraison en 7 à 14 jours</li>
             </ul>

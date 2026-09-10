@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import { site } from "@/data/site";
 import { flavors } from "@/data/flavors";
-import { NewsletterForm } from "@/components/sections/NewsletterForm";
+import { NewsletterConsent, NewsletterForm } from "@/components/sections/NewsletterForm";
 
 const columns = [
   {
@@ -104,6 +104,7 @@ export function Footer() {
               avant-première.
             </p>
             <NewsletterForm tone="dark" />
+            <NewsletterConsent tone="dark" />
           </div>
         </div>
 

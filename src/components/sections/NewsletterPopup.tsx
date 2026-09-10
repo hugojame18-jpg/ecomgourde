@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { NewsletterForm } from "./NewsletterForm";
+import { NewsletterConsent, NewsletterForm } from "./NewsletterForm";
 import Image from "next/image";
 import { asset } from "@/lib/asset";
 import { site } from "@/data/site";
@@ -115,6 +115,7 @@ export function NewsletterPopup() {
               </p>
               <div className="mt-4">
                 <NewsletterForm />
+                <NewsletterConsent />
               </div>
               <button
                 type="button"

@@ -37,7 +37,7 @@ function numericId(gid: string): string {
  * Lève une `CheckoutError` explicite plutôt que d'envoyer le client sur une
  * page cassée.
  */
-export function buildCheckoutUrl(lines: CartLine[]): string {
+export function buildCheckoutUrl(lines: CartLine[], discountCode?: string): string {
   if (lines.length === 0) throw new CheckoutError("Ton panier est vide.");
 
   const parts = lines.map((line) => {
@@ -50,6 +50,11 @@ export function buildCheckoutUrl(lines: CartLine[]): string {
     return `${numericId(gid)}:${Math.max(1, Math.round(line.quantity))}`;
   });
 
-  // `locale=fr` garde la page de paiement en français.
-  return `https://${DOMAIN}/cart/${parts.join(",")}?locale=fr`;
+  // `locale=fr` garde la page de paiement en français ; `discount` applique le
+  // code d'entrée sans que le client ait à le recopier. Shopify l'ignore
+  // silencieusement si le code est expiré ou déjà utilisé par ce client.
+  const params = new URLSearchParams({ locale: "fr" });
+  if (discountCode) params.set("discount", discountCode);
+
+  return `https://${DOMAIN}/cart/${parts.join(",")}?${params.toString()}`;
 }

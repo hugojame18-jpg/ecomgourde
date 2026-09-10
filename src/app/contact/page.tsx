@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
-import { NewsletterForm } from "@/components/sections/NewsletterForm";
+import { NewsletterConsent, NewsletterForm } from "@/components/sections/NewsletterForm";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -67,6 +67,7 @@ export default function ContactPage() {
             </p>
             <div className="mt-5 max-w-[460px]">
               <NewsletterForm />
+              <NewsletterConsent />
             </div>
           </div>
         </div>

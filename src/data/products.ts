@@ -130,11 +130,7 @@ export const products: Product[] = [
         text: "148 g à vide et une sangle pour l'emporter au doigt ou au sac.",
       },
     ],
-    includes: [
-      "1 SUGAR Bottle 650 ml (coloris au choix)",
-      "1 dragonne",
-      "Livraison offerte",
-    ],
+    includes: ["1 SUGAR Bottle 650 ml (coloris au choix)", "1 dragonne", "Livraison offerte"],
     specs: [...bottleSpecs, { label: "Pods inclus", value: "aucun" }],
     faq: bottleFaq(sansPodFaq),
   },
@@ -157,9 +153,9 @@ export const products: Product[] = [
     pods: { count: 7, pick: "all" },
     features: bottleFeatures,
     shortDescription:
-      "La même gourde, mais avec la gamme complète : un pod de chacun des sept arômes. Sept semaines d'eau parfumée, et tu sais exactement ce que tu reçois.",
+      "La même gourde, mais avec la gamme complète : un pod de chacun des sept arômes. Environ un mois d'eau parfumée, et tu sais exactement ce que tu reçois.",
     description: [
-      "C'est l'offre que prennent neuf clients sur dix, et pour une bonne raison : six pods de plus ne coûtent que 8,55 € — moins de 1,50 € le pod.",
+      "C'est l'offre à prendre en premier : les sept arômes pour 8,55 € de plus que la gourde seule, soit 1,22 € le pod.",
       "Le corps translucide en Tritan laisse voir exactement ce qu'il te reste à boire. Le bouchon accueille un pod aromatique : l'air passe par le pod avant d'arriver en bouche, et le cerveau perçoit le goût. Zéro sucre, zéro calorie, zéro arôme dans l'eau.",
       "Les sept pods couvrent toute la gamme, un de chaque arôme : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc. Tu n'as rien à choisir, et tu finiras par savoir lequel est ton préféré.",
     ],
