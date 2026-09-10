@@ -1,25 +1,22 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { flavors, litresPerPack } from "@/data/flavors";
-
+import { LITRES_PER_POD } from "@/data/flavors";
+import { heroProduct } from "@/data/products";
 
 /**
- * Bloc de réassurance économique : combien coûte une semaine de goût.
- * Chiffres calculés depuis les données réelles, jamais écrits en dur.
+ * Bloc de réassurance économique : ce que couvre le pack.
+ * Tout est calculé depuis le produit réellement vendu — le jour où un pod se
+ * vend seul, c'est ici qu'il faudra revenir, pas dans un chiffre écrit en dur.
  */
 export function CostCompare() {
-  const packPrice = flavors[0]?.price ?? 0;
-  // 2 L/jour → 14 L/semaine → ~3 pods par semaine (1 pod ≈ 5 L)
-  const litresPerWeek = 14;
-  const packsPerWeek = litresPerWeek / litresPerPack;
-  const weekly = packPrice * packsPerWeek;
-  // Fourchette arrondie : c'est une estimation, pas un prix exact.
-  const weeklyRange = `${Math.floor(weekly)}–${Math.ceil(weekly)} €`;
+  const pack = heroProduct();
+  const podCount = pack.pods?.count ?? 0;
+  const litres = podCount * LITRES_PER_POD;
 
   const rows = [
-    { k: `≈ ${Math.round(litresPerWeek / litresPerPack)} pods`, v: "par semaine" },
-    { k: "2 L", v: "d'eau par jour" },
-    { k: "0 €", v: "d'abonnement" },
+    { k: `${podCount} pods`, v: "livrés avec la gourde, un par goût" },
+    { k: `${LITRES_PER_POD} L`, v: "d'eau parfumée par pod" },
+    { k: "0 €", v: "d'abonnement, jamais" },
   ];
 
   return (
@@ -36,10 +33,10 @@ export function CostCompare() {
 
             <div>
               <p className="font-display text-[54px] font-bold leading-none tracking-[-0.045em] md:text-[68px]">
-                {weeklyRange}
+                ≈ {litres} L
               </p>
               <p className="mt-2 text-[16px] text-white/60">
-                pour une semaine de goût, à 2 litres par jour
+                d&apos;eau parfumée dans le pack, puis la gourde se garde à vie
               </p>
             </div>
           </div>
@@ -64,7 +61,8 @@ export function CostCompare() {
               Commander avec 7 pods
             </ButtonLink>
             <p className="text-[13px] text-white/45">
-              Un pod parfume environ 5 L. Aucun engagement, tu recommandes quand tu veux.
+              Un pod parfume environ {LITRES_PER_POD} L. Aucun engagement, aucun prélèvement
+              automatique.
             </p>
           </div>
         </Reveal>

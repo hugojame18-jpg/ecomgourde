@@ -5,7 +5,7 @@ export const faq = [
   },
   {
     q: "Combien de temps dure un pod ?",
-    a: "Un pod parfume environ 5 litres, soit une dizaine de remplissages, ce qui représente 4 à 5 jours pour une consommation moyenne. Un pack de 3 pods couvre donc environ deux semaines.",
+    a: "Un pod parfume environ 5 litres, soit une dizaine de remplissages, ce qui représente 4 à 5 jours pour une consommation moyenne. Les sept pods livrés avec la gourde couvrent donc environ un mois.",
   },
   {
     q: "Les pods sont-ils réutilisables ?",
@@ -20,8 +20,8 @@ export const faq = [
     a: "Sept arômes : Orange, Citron, Énergie, Ananas, Cola, Pêche et Raisin blanc. Ils sont livrés ensemble dans le pack gourde + 7 pods, un pod de chaque. Les pods ne sont pas vendus séparément pour le moment.",
   },
   {
-    q: "Comment fonctionne l'abonnement ?",
-    a: "Tu choisis le nombre de packs et la fréquence de livraison. Les pods arrivent automatiquement, jusqu'à 27 % moins cher. Tu peux changer les goûts, décaler une livraison, mettre en pause ou annuler à tout moment depuis ton compte, sans engagement ni frais.",
+    q: "Que se passe-t-il quand mes pods sont épuisés ?",
+    a: "Les recharges vendues séparément arrivent bientôt. En attendant, la gourde reste utilisable telle quelle : sans pod, c'est une gourde classique de 650 ml.",
   },
   {
     q: "Quels sont les délais de livraison ?",
